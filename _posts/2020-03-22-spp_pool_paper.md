@@ -21,7 +21,8 @@ The function of a pooling layer is to progressively reduce the spatial size of t
 
 if stride =2, then the size of the filter is reduced by a factor of 2. 
 
-![Pooling layer](images/pooling_img.png "Pooling")
+![Pooling layer](/images/pooling_img.png "Pooling")
+
 
 ### Why use SPP?
 
@@ -37,7 +38,7 @@ Divides the feature maps outputs (from the Conv Layers) into a number of spatial
 
 **Example**: one layer of 16 bins dividing the image into a 4x4 grid, another layer of of 4 bins dividing the image into a 2x2 grid, and a final layer comprising the whole image. In each spatial bin, the responses of each filter are simply pooled using max pooling. 
 
-![Pooling layer2](images/vanilla_spp.png "Spp")
+![Pooling layer2](/images/vanilla_spp.png "Spp")
 
 ## Paper Summary
 
@@ -105,4 +106,4 @@ Paper mostly talks about adapting R-CNN to use a spp-net type of architecture.
 Spp-net can also be user for object detection. We extract the feature maps from the entire image only once (possibly at multiple scales). Then we apply spp on each candidate window of the feature maps to pool a fixed-length representation of this window. Runs orders of magnitude faster than traditional R-CNN.
 
 
-![Pooling layer3](images/ssp_net_objdec.png "Spp in object detection")
+![Pooling layer3](/images/ssp_net_objdec.png "Spp in object detection")
