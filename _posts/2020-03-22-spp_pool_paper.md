@@ -1,10 +1,15 @@
 # Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
 
-https://arxiv.org/pdf/1406.4729.pdf
+This is a summary of an important paper explaining **spatial pyramid pooling**, a technique used in CNN architectures that is said to help with shift invariance in classification tasks. 
 
-code: https://gist.github.com/yardstick17/22c02363c5e04763373b588f1a3bceeb
+- [Original Paper](https://arxiv.org/pdf/1406.4729.pdf)
 
-blog post:https://medium.com/coinmonks/review-sppnet-1st-runner-up-object-detection-2nd-runner-up-image-classification-in-ilsvrc-906da3753679
+
+- [Code](https://gist.github.com/yardstick17/22c02363c5e04763373b588f1a3bceeb)
+
+
+- [Other resources](https://medium.com/coinmonks/review-sppnet-1st-runner-up-object-detection-2nd-runner-up-image-classification-in-ilsvrc-906da3753679)
+
 
 ### Review: what is a pooling layer?
 
