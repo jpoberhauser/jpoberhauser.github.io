@@ -6,7 +6,7 @@ There are some posts that show important Deep Learning paper summaries, others s
 I currently work as a Data Scientist building Deep Learning models used for weapon detection systems using Computer Vision. 
 
 
-![Actuate AI](/images/logo.png "Actuate AI")
+![Actuate AI](/images/logo2.png "Actuate AI")
 
 
 
