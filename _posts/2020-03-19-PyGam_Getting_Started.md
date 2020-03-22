@@ -45,3 +45,25 @@ df.describe()
 ```
 
 
+![Description of sample classification data](/images/describe_df.png "Description of sample classification data")
+
+
+
+## Building the model
+
+Since this is a classification problem, we want to make sure we use pyGam's `LogisticGAM()` function.
+
+```python
+X = df[['mean radius', 'mean texture', 'mean perimeter', 'mean area','mean smoothness', 'mean compactness']]
+y = target_df
+#Fit a model with the default parameters
+gam = LogisticGAM().fit(X, y)
+```
+
+
+The `summary()` function provides a statistical summary of the model. In the diagnostics below, we can see statistical metrics such as AIC, UBRE, log likelihood, and pseudo-R² measures.
+
+
+![Model summary](/images/model_summary.png "Model summary")
+
+
