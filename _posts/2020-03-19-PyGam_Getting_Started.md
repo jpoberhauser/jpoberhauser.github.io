@@ -67,3 +67,59 @@ The `summary()` function provides a statistical summary of the model. In the dia
 ![Model summary](/images/model_summary.png "Model summary")
 
 
+To get the training accuracy we simply run
+
+`gam.accuracy(X, y)`
+
+And we get a .961335676625659 accuracy right off the bat. Obviously, this is training accuracy so there still needs to be a validation step to make sure we are not overfitting a model here. 
+
+
+One of the nice things about GAMs is that their additive nature allows us to **explore and interpret individual features** by holding others at their mean. The snippet of code below shows these plots for the features included in the trained model. `generate_X_grid` helps us build a grid for nice plotting.
+
+```python
+XX = generate_X_grid(gam)
+plt.rcParams['figure.figsize'] = (28, 8)
+fig, axs = plt.subplots(1, len(data.feature_names[0:6]))
+titles = data.feature_names
+for i, ax in enumerate(axs):
+    pdep, confi = gam.partial_dependence(XX, feature=i+1, width=.95)
+    ax.plot(XX[:, i], pdep)
+    ax.plot(XX[:, i], confi[0][:, 0], c='grey', ls='--')
+    ax.plot(XX[:, i], confi[0][:, 1], c='grey', ls='--')
+    ax.set_title(titles[i])
+plt.show()
+```
+
+
+![Partial dependency plots with confidence intervals](/images/plot_gam.png "Partial dependency plots with confidence intervals")
+
+
+
+We can already see some very interesting results. It is clear that some features have a fairly simple linear relationship with the target variable. There are about three features that seem to have strong non-linear relationships though. We will want to combine the interpretability of these plots, and the power to prevent over fitting in GAMs to come up with a model that generalizes well to a holdout set of data.
+
+
+---
+
+**Partial dependency plots** are extremely useful because they are highly interpretable and easy to understand. For example at first examination we can tell that there is a very strong relationship between the mean radius of the tumor and the response variable. The bigger the radius of the tumor, the more likely it is to be malignant. Other features like the mean texture are harder to decipher, and we can already infer that we might want to make that a smoother line (we walk through smoothing parameters in the next section).
+
+
+
+## Tuning Smoothness and Penalties
+
+
+This is where the functionality of pyGAM begins to really shine through. We can choose to build a grid for parameter tuning or we can use intuition and domain expertise to find optimal smoothing penalties for the model.
+
+Main parameters to keep in mind are:
+
+`n_splines` , `lam` , and `constraints`
+
+
+`n_splines` refers to the number of splines to use in each of the smooth function that is going to be fitted.
+
+`lam` is the penalization term that is multiplied to the second derivative in the overall objective function.
+
+
+`constraints` is a list of constraints that allows the user to specify whether a function should have a monotonically constraint. This needs to be a string in ['convex', 'concave', 'monotonic_inc', 'monotonic_dec','circular', 'none']
+
+
+The default parameters that are being used in the model presented above are the following….
