@@ -1,10 +1,17 @@
 # Paper Summary: Learning Data Augmentation Strategies for Object Detection
 
-Paper: https://arxiv.org/pdf/1906.11172.pdf
-Date: April 12th 2019
-Authors: Barret Zoph∗ , Ekin D. Cubuk∗ , Golnaz Ghiasi, Tsung-Yi Lin, Jonathon Shlens, Quoc V. Le, Google Brain
-Code: https://github.com/tensorflow/tpu/tree/master/models/official/detection
 
+
+- [Original Paper](https://arxiv.org/pdf/1906.11172.pdf)
+
+- Date: April 12th 2019
+
+- Authors: Barret Zoph∗ , Ekin D. Cubuk∗ , Golnaz Ghiasi, Tsung-Yi Lin, Jonathon Shlens, Quoc V. Le, Google Brain
+
+- [Code](https://gist.github.com/yardstick17/22c02363c5e04763373b588f1a3bceeb)
+
+
+- [Code](https://github.com/tensorflow/tpu/tree/master/models/official/detection)
 
 
 ## I. Abstract:
