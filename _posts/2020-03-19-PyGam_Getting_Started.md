@@ -1,4 +1,4 @@
-# Paper Summary: pyGAM Getting Started with Generalized Additive Models in Python
+# pyGAM tutorial: Getting Started with Generalized Additive Models in Python
 
 
 ## Intro
