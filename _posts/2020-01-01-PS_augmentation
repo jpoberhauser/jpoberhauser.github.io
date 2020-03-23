@@ -2,9 +2,7 @@
 
 Paper: https://arxiv.org/pdf/1906.11172.pdf
 Date: April 12th 2019
-Authors: Barret Zoph∗
-, Ekin D. Cubuk∗
-, Golnaz Ghiasi, Tsung-Yi Lin, Jonathon Shlens, Quoc V. Le, Google Brain
+Authors: Barret Zoph∗ , Ekin D. Cubuk∗ , Golnaz Ghiasi, Tsung-Yi Lin, Jonathon Shlens, Quoc V. Le, Google Brain
 Code: https://github.com/tensorflow/tpu/tree/master/models/official/detection
 
 
@@ -36,7 +34,7 @@ We consider 3 types of augmentation:
 They treat data augmentation search as a discrete optimization problem and optimize for generalization performance on the validation set. During training, on of the K (k=5) sub-policies will be selected at random and then applied to the current image. Each sub-policy has (N=2) image transformations. Each operatino is associated with 2 hyper-parameters (roation degree, tranlsation pixel count, brightness level, shearing angles, etc).
 
 
-![Example policies ](img/image_policies.png "5 Example Policies")
+![Example policies ](images/image_policies.png "5 Example Policies")
 
 
 In preliminary expoeriments, they found 3 operations that are most beneficial to object detection:
