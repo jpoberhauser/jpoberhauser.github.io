@@ -1,4 +1,4 @@
-# Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
+# Paper Summary: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
 
 This is a summary of an important paper explaining **spatial pyramid pooling**, a technique used in CNN architectures that is said to help with shift invariance in classification tasks. 
 
