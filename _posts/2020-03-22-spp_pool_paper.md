@@ -17,7 +17,7 @@ The pooling layer is a downsampling operation, typically applied after a convolu
 
 The function of a pooling layer is to progressively reduce the spatial size of the representation to reduce the amount of parameters and computation in the network. Pooling layer operates on each feature map independently. 
 
-For example, if we apply some sort of pooling to 64 224x224 intermediate feature representations of an image, we can end up with 64 112x112 feature representations of said iamge. 
+For example, if we apply some sort of pooling to 64 224x224 intermediate feature representations of an image, we can end up with 64 112x112 feature representations of said image. 
 
 [ ]                      -->       [ ]
 
