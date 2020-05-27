@@ -1,6 +1,6 @@
 # About
 
-Data Scientist at https://actuate.ai/
+Data Scientist at [Actuate](https://actuate.ai/)
 
 
 
