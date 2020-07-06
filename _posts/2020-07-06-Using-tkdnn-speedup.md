@@ -228,8 +228,9 @@ Result video:
 `tkDNN/build/result.mp4`
 
 
-### Python parser:
+### Python Wrapper:
 
+If python is needed for the prediction engine, there is a wrapper you can use [here](https://github.com/ceccocats/tkDNN/pull/44) (still in a PR at the time of this post) 
 
 `git clone https://github.com/ioir123ju/tkDNN.git`
 
