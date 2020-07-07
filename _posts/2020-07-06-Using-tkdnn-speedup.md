@@ -1,4 +1,4 @@
-# Using tkDNN and TensoRT to speed up your Object Detector Prediction Engine (darknet example)
+# Using tkDNN and TensorRT to speed up your Object Detector Prediction Engine (darknet example)
 
 
 If you use darknet as an object detector, you can use tkDNN to speed up the prediction engine. The link to the repo is [here](https://github.com/ceccocats/tkDNN).
