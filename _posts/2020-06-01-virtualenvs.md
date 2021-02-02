@@ -19,3 +19,9 @@ and then activate it with:
 
 `source venv/bin/activate` 
 
+
+## Freeze environment
+
+`pip freeze > requirements.txt`
+
+
