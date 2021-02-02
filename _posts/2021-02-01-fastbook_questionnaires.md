@@ -1,4 +1,4 @@
-## Chapter 4 MNIST Basics
+## Fastbook Chapter 4 MNIST Basics
 
 * https://github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb
 
@@ -51,9 +51,28 @@ The formula for RMSE is
 
 RMS Errors= $\sqrt{\frac{\sum_{i=1}^n (\hat{y_i}-y_i)^2}{n}}$
 
-How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
-Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.
-What is broadcasting?
+
+L1 norm is a normalization technique to reduce the overall complexity of a model and avoid overfitting. L1 norm is applied to a model by adding a piece at the end of the loss function that penalized large parameters. 
+
+L1 loss is simply `(a-b).abs().mean()`
+
+8. How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
+
+There are a couple of techniques described in this chapter: one is broadcasting and the other is `einsum` or Einstein Summation. 
+
+
+9. Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.
+
+```
+import torch
+nums = torch.tensor([[1,2, 3],
+                        [4,5, 6],
+                        [7,8,9]])
+nums = nums * 2
+nums[1:, 1:]
+```
+
+10. What is broadcasting?
 Are metrics generally calculated using the training set, or the validation set? Why?
 What is SGD?
 Why does SGD use mini-batches?
