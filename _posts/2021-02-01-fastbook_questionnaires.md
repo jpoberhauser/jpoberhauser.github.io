@@ -1,7 +1,10 @@
-## Fastbook Chapter 4 MNIST Basics
+# Fastbook Chapter 4 MNIST Basics
 
 * https://github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb
 
+
+
+### Questionnaire
 
 
 #### 1. How is a grayscale image represented on a computer? How about a color image?
@@ -75,8 +78,34 @@ nums[1:, 1:]
 
 #### 10. What is broadcasting?
 
-Are metrics generally calculated using the training set, or the validation set? Why?
-What is SGD?
+* broadcasting is a technique used by packages like PyTorch or NumPy. The idea is that when you have operations on two objects that are different ranks, the package will so an **implicit** broadcasting where it makes the smaller ranked object into a larger ranked object so they are able to interact. 
+
+From the fastai from the foundations course:
+
+"When operating on two arrays/tensors, Numpy/PyTorch compares their shapes element-wise. It starts with the trailing dimensions, and works its way forward. Two dimensions are compatible when"
+
+"If they are equal, or one of them is 1, in which case that dimension is broadcasted to make it the same size Arrays do not need to have the same number of dimensions. For example, if you have a 2562563 array of RGB values, and you want to scale each color in the image by a different value, you can multiply the image by a one-dimensional array with 3 values. Lining up the sizes of the trailing axes of these arrays according to the broadcast rules, shows that they are compatible:
+
+Image (3d array): 256 x 256 x 3 Scale (1d array): 3 Result (3d array): 256 x 256 x 3
+
+The numpy documentation includes several examples of what dimensions can and can not be broadcast together.
+
+
+#### 11. Are metrics generally calculated using the training set, or the validation set? Why?
+
+Metrics are calculated using the validation set. There is a difference between loss and metrics. 
+
+Loss is what the model uses to calcualte gradients so the model knows which way to shift the weights. 
+
+Metrics are generally calcualted during the validation so that the person training the model knows (in a human readbale way) how the model is doing.
+
+
+
+
+#### 12. What is SGD?
+
+Its stochastic gradient descent . 
+
 Why does SGD use mini-batches?
 What are the seven steps in SGD for machine learning?
 How do we initialize the weights in a model?
