@@ -20,10 +20,10 @@ A color image is pretty much the same except its represented by 3 matrices, one 
 
 #### 3. Explain how the "pixel similarity" approach to classifying digits works.
 
-This approach is where you take all your samples of "7"s for example, you line up all their matrices (in this case 28x28), and then you take the average of all pixels in the same position.
-This approach gives you what an "average 7" looks like, and you can do the same for all numbers in your MNIST dataset.
+  This approach is where you take all your samples of "7"s for example, you line up all their matrices (in this case 28x28), and then you take the average of all pixels in the same position.
+  This approach gives you what an "average 7" looks like, and you can do the same for all numbers in your MNIST dataset.
 
-Once you have your "average" of all the numbers, you can then do "predictions" by taking an image in the validation set, comparing to each of the average numbers you have (one for each class) and then returning the class for which your sample had the least amount of differences. 
+  * Once you have your "average" of all the numbers, you can then do "predictions" by taking an image in the validation set, comparing to each of the average numbers you have (one for each class) and then returning the class for which your sample had the least amount of differences. 
 
 
 
@@ -78,13 +78,13 @@ nums[1:, 1:]
 
 #### 10. What is broadcasting?
 
-* broadcasting is a technique used by packages like PyTorch or NumPy. The idea is that when you have operations on two objects that are different ranks, the package will so an **implicit** broadcasting where it makes the smaller ranked object into a larger ranked object so they are able to interact. 
+  * broadcasting is a technique used by packages like PyTorch or NumPy. The idea is that when you have operations on two objects that are different ranks, the package will so an **implicit** broadcasting where it makes the smaller ranked object into a larger ranked object so they are able to interact. 
 
-From the fastai from the foundations course:
+  From the fastai from the foundations course:
 
-"When operating on two arrays/tensors, Numpy/PyTorch compares their shapes element-wise. It starts with the trailing dimensions, and works its way forward. Two dimensions are compatible when"
+  * "When operating on two arrays/tensors, Numpy/PyTorch compares their shapes element-wise. It starts with the trailing dimensions, and works its way forward. Two dimensions are compatible when"
 
-"If they are equal, or one of them is 1, in which case that dimension is broadcasted to make it the same size Arrays do not need to have the same number of dimensions. For example, if you have a 2562563 array of RGB values, and you want to scale each color in the image by a different value, you can multiply the image by a one-dimensional array with 3 values. Lining up the sizes of the trailing axes of these arrays according to the broadcast rules, shows that they are compatible:
+  * "If they are equal, or one of them is 1, in which case that dimension is broadcasted to make it the same size Arrays do not need to have the same number of dimensions. For example, if you have a 2562563 array of RGB values, and you want to scale each color in the image by a different value, you can multiply the image by a one-dimensional array with 3 values. Lining up the sizes of the trailing axes of these arrays according to the broadcast rules, shows that they are compatible:
 
 Image (3d array): 256 x 256 x 3 Scale (1d array): 3 Result (3d array): 256 x 256 x 3
 
