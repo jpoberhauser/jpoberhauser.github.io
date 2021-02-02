@@ -9,9 +9,9 @@
 
 #### 1. How is a grayscale image represented on a computer? How about a color image?
 
-A greyscale image is a MxN matrix, where M and N represent the height and width of the image. Each value in the matrix is the color value (in the greyscale case its just the intensity of black for example). 
+  * A greyscale image is a MxN matrix, where M and N represent the height and width of the image. Each value in the matrix is the color value (in the greyscale case its just the intensity of black for example). 
 
-A color image is pretty much the same except its represented by 3 matrices, one for each color channel in the RGB scheme (Red, Green, Blue)
+  * A color image is pretty much the same except its represented by 3 matrices, one for each color channel in the RGB scheme (Red, Green, Blue)
 
 
 
@@ -20,7 +20,7 @@ A color image is pretty much the same except its represented by 3 matrices, one 
 
 #### 3. Explain how the "pixel similarity" approach to classifying digits works.
 
-  This approach is where you take all your samples of "7"s for example, you line up all their matrices (in this case 28x28), and then you take the average of all pixels in the same position.
+  * This approach is where you take all your samples of "7"s for example, you line up all their matrices (in this case 28x28), and then you take the average of all pixels in the same position.
   This approach gives you what an "average 7" looks like, and you can do the same for all numbers in your MNIST dataset.
 
   * Once you have your "average" of all the numbers, you can then do "predictions" by taking an image in the validation set, comparing to each of the average numbers you have (one for each class) and then returning the class for which your sample had the least amount of differences. 
@@ -44,7 +44,7 @@ So a rank-3 tensor should return something like `torch.Size([784, 50, 32])` for 
 
 #### 6. What is the difference between tensor rank and shape? How do you get the rank from the shape?
 
-The rank of a tensor is the length of the tensors shape
+    * The rank of a tensor is the length of the tensors shape.
 
 
 #### 7. What are RMSE and L1 norm?
@@ -56,13 +56,13 @@ The formula for RMSE is
 RMS Errors= $\sqrt{\frac{\sum_{i=1}^n (\hat{y_i}-y_i)^2}{n}}$
 
 
-L1 norm is a normalization technique to reduce the overall complexity of a model and avoid overfitting. L1 norm is applied to a model by adding a piece at the end of the loss function that penalized large parameters. 
+  * L1 norm is a normalization technique to reduce the overall complexity of a model and avoid overfitting. L1 norm is applied to a model by adding a piece at the end of the loss function that penalized large parameters. 
 
-L1 loss is simply `(a-b).abs().mean()`
+  * L1 loss is simply `(a-b).abs().mean()`
 
 #### 8. How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
 
-There are a couple of techniques described in this chapter: one is broadcasting and the other is `einsum` or Einstein Summation. 
+  * There are a couple of techniques described in this chapter: one is broadcasting and the other is `einsum` or Einstein Summation. 
 
 
 #### 9. Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.
@@ -93,39 +93,39 @@ The numpy documentation includes several examples of what dimensions can and can
 
 #### 11. Are metrics generally calculated using the training set, or the validation set? Why?
 
-Metrics are calculated using the validation set. There is a difference between loss and metrics. 
+  * Metrics are calculated using the validation set. There is a difference between loss and metrics. 
 
-Loss is what the model uses to calcualte gradients so the model knows which way to shift the weights. 
+  * Loss is what the model uses to calcualte gradients so the model knows which way to shift the weights. 
 
-Metrics are generally calcualted during the validation so that the person training the model knows (in a human readbale way) how the model is doing.
+  * Metrics are generally calcualted during the validation so that the person training the model knows (in a human readbale way) how the model is doing.
 
 
 
 
 #### 12. What is SGD?
 
-Its stochastic gradient descent. This is how backpropagation works basically. 
+  * Its stochastic gradient descent. This is how backpropagation works basically. 
 
-The main idea is that we take a mini-batch of our training set, run it through the forward pass, then the backward pass where we take the gradients and update the weights. The algorithm does this until the specified number of times to run has been met. This optimizatoin algorithm updates weights by taking the loss function and seeing which way weights need to updated to minimize loss. 
+  * The main idea is that we take a mini-batch of our training set, run it through the forward pass, then the backward pass where we take the gradients and update the weights. The algorithm does this until the specified number of times to run has been met. This optimizatoin algorithm updates weights by taking the loss function and seeing which way weights need to updated to minimize loss. 
 
 #### 13. Why does SGD use mini-batches?
 
-Batches are used for a couple of main reasons. GPUs work better with batches since all image batches will make easy parallelization. Another reason to use mini-batches is that they yield more stable gradients than running and updating a single image or data point at a time. 
+  * Batches are used for a couple of main reasons. GPUs work better with batches since all image batches will make easy parallelization. Another reason to use mini-batches is that they yield more stable gradients than running and updating a single image or data point at a time. 
 
 #### 14. What are the seven steps in SGD for machine learning?
 
 #### 15. How do we initialize the weights in a model?
 
-Historically a popular initialization method was to use zeros or to initilizae at small numbers from a gaussian. Now, the standard is He initilization which works really well with the nonlinerarity that is most widely used at the moment `ReLU`. 
+  * Historically a popular initialization method was to use zeros or to initilizae at small numbers from a gaussian. Now, the standard is He initilization which works really well with the nonlinerarity that is most widely used at the moment `ReLU`. 
 
 https://arxiv.org/abs/1502.01852
 
 
 #### 16. What is "loss"?
 
-Loss is a function that we use to tell the SGD step how far off the output of the forward pass was to the ground truth. There are many loss functions used in ML for both classification and regression problems. 
+  * Loss is a function that we use to tell the SGD step how far off the output of the forward pass was to the ground truth. There are many loss functions used in ML for both classification and regression problems. 
 
-Some popular loss functions are MSE and cross-entropy loss. 
+  * Some popular loss functions are MSE and cross-entropy loss. 
 
 
 #### 17. Why can't we always use a high learning rate?
