@@ -10,7 +10,10 @@ A greyscale image is a MxN matrix, where M and N represent the height and width 
 
 A color image is pretty much the same except its represented by 3 matrices, one for each color channel in the RGB scheme (Red, Green, Blue)
 
+
+
 2. How are the files and folders in the MNIST_SAMPLE dataset structured? Why?
+
 
 3. Explain how the "pixel similarity" approach to classifying digits works.
 
@@ -18,6 +21,8 @@ This approach is where you take all your samples of "7"s for example, you line u
 This approach gives you what an "average 7" looks like, and you can do the same for all numbers in your MNIST dataset.
 
 Once you have your "average" of all the numbers, you can then do "predictions" by taking an image in the validation set, comparing to each of the average numbers you have (one for each class) and then returning the class for which your sample had the least amount of differences. 
+
+
 
 4. What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.
 
@@ -27,10 +32,11 @@ res = [x*2 for x in list_of_nums if x%2 == 0]
 ```
 
 5. What is a "rank-3 tensor"?
-
+```
 The rank of a tensor is the length of the tensors shape. So if you do `x.shape` and you get `torch.Size([784, 50])` as a result, thats a rank 2 tensor. 
 
 So a rank-3 tensor should return something like `torch.Size([784, 50, 32])` for example. 
+```
 
 6. What is the difference between tensor rank and shape? How do you get the rank from the shape?
 
