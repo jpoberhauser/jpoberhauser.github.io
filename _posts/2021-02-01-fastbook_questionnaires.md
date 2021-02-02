@@ -130,7 +130,12 @@ Some popular loss functions are MSE and cross-entropy loss.
 
 #### 17. Why can't we always use a high learning rate?
 
+  * Picking the right learning rate is actually a very important process in training a deep learning model. If we use a learning rate that is too high, the model could take steps that are too large and never converge. On the other hand, a small learning rate could get stuck in a local minimum or just take way too long to converge. 
+
 #### 18. What is a "gradient"?
+ 
+ 
+
 Do you need to know how to calculate gradients yourself?
 Why can't we use accuracy as a loss function?
 Draw the sigmoid function. What is special about its shape?
