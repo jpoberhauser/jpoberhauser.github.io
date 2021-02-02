@@ -41,7 +41,9 @@ The rank of a tensor is the length of the tensors shape
 
 RMSE = Root Mean Squared error.
 
-The formula for RMSE is RMS Errors= \sqrt{\frac{\sum_{i=1}^n (\hat{y_i}-y_i)^2}{n}}
+The formula for RMSE is 
+
+RMS Errors= $\sqrt{\frac{\sum_{i=1}^n (\hat{y_i}-y_i)^2}{n}}$
 
 How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
 Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.
