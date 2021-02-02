@@ -4,7 +4,7 @@
 
 
 
-1. How is a grayscale image represented on a computer? How about a color image?
+#### 1. How is a grayscale image represented on a computer? How about a color image?
 
 A greyscale image is a MxN matrix, where M and N represent the height and width of the image. Each value in the matrix is the color value (in the greyscale case its just the intensity of black for example). 
 
@@ -12,10 +12,10 @@ A color image is pretty much the same except its represented by 3 matrices, one 
 
 
 
-2. How are the files and folders in the MNIST_SAMPLE dataset structured? Why?
+#### 2. How are the files and folders in the MNIST_SAMPLE dataset structured? Why?
 
 
-3. Explain how the "pixel similarity" approach to classifying digits works.
+#### 3. Explain how the "pixel similarity" approach to classifying digits works.
 
 This approach is where you take all your samples of "7"s for example, you line up all their matrices (in this case 28x28), and then you take the average of all pixels in the same position.
 This approach gives you what an "average 7" looks like, and you can do the same for all numbers in your MNIST dataset.
@@ -24,26 +24,27 @@ Once you have your "average" of all the numbers, you can then do "predictions" b
 
 
 
-4. What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.
+#### 4. What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.
 
 ```
 list_of_nums = [1, 3, 2, 4, 6, 8, 7]
 res = [x*2 for x in list_of_nums if x%2 == 0]
 ```
 
-5. What is a "rank-3 tensor"?
+#### 5. What is a "rank-3 tensor"?
+
 ```
 The rank of a tensor is the length of the tensors shape. So if you do `x.shape` and you get `torch.Size([784, 50])` as a result, thats a rank 2 tensor. 
 
 So a rank-3 tensor should return something like `torch.Size([784, 50, 32])` for example. 
 ```
 
-6. What is the difference between tensor rank and shape? How do you get the rank from the shape?
+#### 6. What is the difference between tensor rank and shape? How do you get the rank from the shape?
 
 The rank of a tensor is the length of the tensors shape
 
 
-7. What are RMSE and L1 norm?
+#### 7. What are RMSE and L1 norm?
 
 RMSE = Root Mean Squared error.
 
@@ -56,12 +57,12 @@ L1 norm is a normalization technique to reduce the overall complexity of a model
 
 L1 loss is simply `(a-b).abs().mean()`
 
-8. How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
+#### 8. How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
 
 There are a couple of techniques described in this chapter: one is broadcasting and the other is `einsum` or Einstein Summation. 
 
 
-9. Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.
+#### 9. Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.
 
 ```
 import torch
@@ -72,7 +73,8 @@ nums = nums * 2
 nums[1:, 1:]
 ```
 
-10. What is broadcasting?
+#### 10. What is broadcasting?
+
 Are metrics generally calculated using the training set, or the validation set? Why?
 What is SGD?
 Why does SGD use mini-batches?
