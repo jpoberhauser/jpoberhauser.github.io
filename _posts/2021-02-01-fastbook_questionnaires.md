@@ -104,14 +104,33 @@ Metrics are generally calcualted during the validation so that the person traini
 
 #### 12. What is SGD?
 
-Its stochastic gradient descent . 
+Its stochastic gradient descent. This is how backpropagation works basically. 
 
-Why does SGD use mini-batches?
-What are the seven steps in SGD for machine learning?
-How do we initialize the weights in a model?
-What is "loss"?
-Why can't we always use a high learning rate?
-What is a "gradient"?
+The main idea is that we take a mini-batch of our training set, run it through the forward pass, then the backward pass where we take the gradients and update the weights. The algorithm does this until the specified number of times to run has been met. This optimizatoin algorithm updates weights by taking the loss function and seeing which way weights need to updated to minimize loss. 
+
+#### 13. Why does SGD use mini-batches?
+
+Batches are used for a couple of main reasons. GPUs work better with batches since all image batches will make easy parallelization. Another reason to use mini-batches is that they yield more stable gradients than running and updating a single image or data point at a time. 
+
+#### 14. What are the seven steps in SGD for machine learning?
+
+#### 15. How do we initialize the weights in a model?
+
+Historically a popular initialization method was to use zeros or to initilizae at small numbers from a gaussian. Now, the standard is He initilization which works really well with the nonlinerarity that is most widely used at the moment `ReLU`. 
+
+https://arxiv.org/abs/1502.01852
+
+
+#### 16. What is "loss"?
+
+Loss is a function that we use to tell the SGD step how far off the output of the forward pass was to the ground truth. There are many loss functions used in ML for both classification and regression problems. 
+
+Some popular loss functions are MSE and cross-entropy loss. 
+
+
+#### 17. Why can't we always use a high learning rate?
+
+#### 18. What is a "gradient"?
 Do you need to know how to calculate gradients yourself?
 Why can't we use accuracy as a loss function?
 Draw the sigmoid function. What is special about its shape?
