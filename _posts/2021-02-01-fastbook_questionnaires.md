@@ -134,7 +134,7 @@ https://arxiv.org/abs/1502.01852
 
 #### 18. What is a "gradient"?
  
- * A gradient is a partial derivative. If we have $f(x) = c + x$  and we take the reicative of f w.r.t to x we are asking "what is the effect of x on the output f(x)?" or "If we increase x by h, then f(x) output will increase by h.
+ * A gradient is a partial derivative. If we have $f(x) = c + x$  and we take the derivative of f w.r.t to x we are asking "what is the effect of x on the output f(x)?" or "If we increase x by h, then f(x) output will increase by h.
  
  
 
