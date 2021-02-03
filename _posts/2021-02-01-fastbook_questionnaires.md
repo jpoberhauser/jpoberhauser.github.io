@@ -134,11 +134,22 @@ https://arxiv.org/abs/1502.01852
 
 #### 18. What is a "gradient"?
  
+ * A gradient is a partial derivative. If we have $f(x) = c + x$  and we take the reicative of f w.r.t to x we are asking "what is the effect of x on the output f(x)?" or "If we increase x by h, then f(x) output will increase by h.
+ 
  
 
-Do you need to know how to calculate gradients yourself?
-Why can't we use accuracy as a loss function?
-Draw the sigmoid function. What is special about its shape?
+#### 19. Do you need to know how to calculate gradients yourself?
+
+* Not necessarily since libraries like PyTorch have auto_grad and automatically keep track of gradients for us. Althoug, it could be useful when debugging or when choosing loss functoins for certain tasks. 
+
+
+
+#### 20. Why can't we use accuracy as a loss function?
+* Accuracy is a bad loss functoin because its not smooth. For each training sample accuracy will be either 1 or 0, and that gives the optimization algorithm some infromation on the direction of the update, but it gives back very litte information (via the gradient) on how far off our prediction is from the ground truth. That is why it is generally better to use something like cross-entropy loss. 
+
+#### 21. Draw the sigmoid function. What is special about its shape?
+
+
 What is the difference between a loss function and a metric?
 What is the function to calculate new weights using a learning rate?
 What does the DataLoader class do?
