@@ -217,6 +217,17 @@ Why?  If you had mostly green frogs in your train set and mostly red frogs in yo
 3. Fine tune the earlier layers with a small `lr` 
 
 ## Precision vs. Recall
+ in words:
+ 
+ **recall** "When the ground truth is **yes** how often does it predict **yes**". This is (in a simplistic view) a measure that is made worse by False Negatives.
+ 
+ **precision** "When the model predicts **yes** how often is it correct?".  This is (in a simplistic view) a measure that is made worse by False Positives.
+
+formulas: 
+
+$\text{Recall}}={\frac {tp}{tp+fn}}$
+
+$\text{Precision}}={\frac {tp}{tp+fp}}$
 
 
 
