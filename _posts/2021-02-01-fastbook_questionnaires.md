@@ -150,8 +150,16 @@ https://arxiv.org/abs/1502.01852
 #### 21. Draw the sigmoid function. What is special about its shape?
 
 
-What is the difference between a loss function and a metric?
-What is the function to calculate new weights using a learning rate?
+#### 22. What is the difference between a loss function and a metric?
+
+ * a loss function is what the optimization algorithm uses to calculate gradients and move weights accodingly. It is the function the model uses to minimze and know which direction to move predictions. MSE and cross-entropy are 2 examples of that. 
+ 
+ * a metric is something the Data Scientist uses to understand how the model is performing and generalizing. Some examples are accuracy, precision, recall. 
+
+
+#### 23. What is the function to calculate new weights using a learning rate?
+
+
 What does the DataLoader class do?
 Write pseudocode showing the basic steps taken in each epoch for SGD.
 Create a function that, if passed two arguments [1,2,3,4] and 'abcd', returns [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]. What is special about that output data structure?
