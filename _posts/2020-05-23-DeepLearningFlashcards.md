@@ -1,6 +1,10 @@
 # Deep Learning Flashcards
 
-### NMS (Non maximum supression)
+1. TOC 
+{:toc}
+
+
+## NMS (Non maximum supression)
 
 * Technique used in some object detectors to remove duplicate boxes. Many detectors generate anchors or region proposals and then need a way to remove boxes that are essentially finding the same thing. The algorithm is basically:
 
@@ -17,21 +21,21 @@ For a given class:
 5. Repeat until there are no more boxes in the proposed list. 
 
 
-### Panoptic Segmentation 
+## Panoptic Segmentation 
 
 Source: https://arxiv.org/abs/1801.00868
 
 We propose and study a task we name panoptic segmentation (PS). Panoptic segmentation unifies the typically distinct tasks of semantic segmentation (assign a class label to each pixel) and instance segmentation (detect and segment each object instance). 
 
 
-### Transformers
+## Transformers
 
 source: https://arxiv.org/pdf/1706.03762.pdf
 
 Architecture that proves that attention-only mechanisms (without RNNs like LSTMs) can improve on the results in translation or seq2seq tasks. 
 
 
-### Attention
+## Attention
 
 source: https://arxiv.org/pdf/1706.03762.pdf
 
