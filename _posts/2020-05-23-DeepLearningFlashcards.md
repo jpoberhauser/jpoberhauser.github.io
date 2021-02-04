@@ -42,6 +42,7 @@ at **inference time**:
   3. Take average of predictions and use tha as final prediction
   
 ## NMS (non-maximum suppression)
+* https://www.coursera.org/lecture/convolutional-neural-networks/non-max-suppression-dvrjH
 
 * Technique used in some object detectors to remove duplicate boxes. Many detectors generate anchors or region proposals and then need a way to remove boxes that are essentially finding the same thing. The algorithm is basically:
 
