@@ -41,3 +41,39 @@ source: https://arxiv.org/pdf/1706.03762.pdf
 
 The attention mechanism looks at an input sequence and decides at each step which other parts of the sequence are most "important". This information gets passed along in translation encode-decoders to help the seq2seq model. 
 
+## Deep Learning Regularization Methods
+
+  1. dropout
+  2. weight decay (L2 regularizatoin)
+  3. data augmentation
+  4. batch normalization
+
+## Test Time Augmentation
+
+at **inference time**:
+  1. do several transformations on the image
+  2. Classify all those images
+  3. Take average of predictions and use tha as final prediction
+  
+## NMS (non-maximum suppression)
+
+  input: list of several proposal boxes `B`, corresponding confidence scores `S` and overlap threshold `N`.
+  Output: list of filtered proposals `D`
+  Algorithm:
+    1. Select proposal with highest confidence score, remove it from `B` and add it to proposal list `D`.
+    2. Compare that proposal with all others, calculate IoI to all other proposals. If IoU is greater than threshold `N`, remove proposal from `B`.
+    3. Again, take proposal with highest confidence for `B` and put it in `D`.
+    4. Again, calculate IoU to all other proposals, eliminatie boxes w/ IoU higher than `N` from `B`.
+    5. Repeat
+    
+## Discrimitavie Learning Rates
+
+* source: fast.ai
+
+* In transfer learning and Fine-tuning, we give the first layers, the midde laters, and the final layers different learning rates. 
+
+ * The first layers, (more general patterns) are close to a local min already, so went a small lr to not move around too much. 
+ 
+ * The later final layes have not been trained a lot on your specific task, so alerger lr is needed to get close to the minimum. 
+
+
