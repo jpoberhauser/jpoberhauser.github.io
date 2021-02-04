@@ -225,7 +225,7 @@ Why?  If you had mostly green frogs in your train set and mostly red frogs in yo
 
 formulas: 
 
-${\frac{tp}{tp+fn}$
+${\frac{tp}{tp+fn}}$
 
 ${\frac{tp}{tp+fp}}$
 
