@@ -231,6 +231,12 @@ $\text{Precision}}={\frac {tp}{tp+fp}}$
 
 
 
+## What problem do ResNets solve?
+
+* vanishing gradient
+
+* With ResNets, the gradients can flow directly through the **skip connections** backwards from the later layers to initial filters. 
+
 
 
 
