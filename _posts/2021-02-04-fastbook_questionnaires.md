@@ -1,3 +1,7 @@
+# Fastbook Chapter 5:  Pet Breeds - Image Classification
+
+
+
 Why do we first resize to a large size on the CPU, and then to a smaller size on the GPU?
 If you are not familiar with regular expressions, find a regular expression tutorial, and some problem sets, and complete them. Have a look on the book's website for suggestions.
 What are the two ways in which data is most commonly provided, for most deep learning datasets?
