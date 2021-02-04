@@ -4,21 +4,7 @@
 {:toc}
 
 
-## NMS (Non maximum supression)
 
-* Technique used in some object detectors to remove duplicate boxes. Many detectors generate anchors or region proposals and then need a way to remove boxes that are essentially finding the same thing. The algorithm is basically:
-
-For a given class:
-
-1. Take a list of all boxes the detector finds along with the confidence scores. Take the box with the highest confidence and add it to the final list, while removing it from the original proposed list. 
-
-2. Calculate the IoU with all other boxes in the proposed set and if the IoU with any of the proposed boxes and the one with the highest score is higher than the desired threshold (.7 for example), remove all those boxes. 
-
-3. Take the box with the highest confidence from the proposed list and move it to the final list.
-
-4. Calculate the IoU with all other boxes in the proposed set and if the IoU with any of the proposed boxes and the one with the highest score is higher than the desired threshold (.7 for example), remove all those boxes. 
-
-5. Repeat until there are no more boxes in the proposed list. 
 
 
 ## Panoptic Segmentation 
@@ -57,6 +43,10 @@ at **inference time**:
   
 ## NMS (non-maximum suppression)
 
+* Technique used in some object detectors to remove duplicate boxes. Many detectors generate anchors or region proposals and then need a way to remove boxes that are essentially finding the same thing. The algorithm is basically:
+
+For a given class:
+
   input: list of several proposal boxes `B`, corresponding confidence scores `S` and overlap threshold `N`.
   Output: list of filtered proposals `D`
   Algorithm:
@@ -75,5 +65,41 @@ at **inference time**:
  * The first layers, (more general patterns) are close to a local min already, so went a small lr to not move around too much. 
  
  * The later final layes have not been trained a lot on your specific task, so alerger lr is needed to get close to the minimum. 
+
+## PCA
+
+* dimensionality reduction algorithm. 
+
+1. Find directoins of maximum varianse in data (orthogonal to each other)
+
+2. Transform features onto directions of maxiumum variance
+
+or another way to look at it: Covariance matrix --> Eigen decomposition --> sort by eigen values --> keep eigen vectors w/ highest eigen values
+
+## Image Segmentation
+
+* source fast.ai
+
+* Each pixel has a unique class. We perform calssification for **every single pixel in the image**
+
+
+## Deterministic (lagorithm, process, model, etc..)
+
+* A model, procedure, algorithm etc, 
+
+  * whose resulting behavior is **entirely** determind by its initial state and inputs, and which is not random or stochastic.
+  
+## Mixup (Data augmentation technique)
+
+A data augmentation technique:
+
+  * pick a random weight and take a weighted average of 2 images from your dataset. 
+  
+  * take a weighted average (with the same weights) of the 2 image labels
+  
+  * Create virtual training examples where you have an averaged $x_i$ and $x_j$ input vectors and $y_i$, $y_j$ one hot encoded labels. 
+  
+  * paper: https://arxiv.org/pdf/1710.09412.pdf
+
 
 
