@@ -103,4 +103,89 @@ A data augmentation technique:
   * paper: https://arxiv.org/pdf/1710.09412.pdf
 
 
+## FLOPS
+
+Floating Point Operations (FLOPs)
+
+Floating Point Operations per second (FLOPS)
+
+## Encoder-Decoder Architectures
+
+Input --> Encoder --> State --> Decoder --> Output
+
+## Embeddings
+ 
+* Multiplying by a one-hot encoded matrix, using the computational shortcut that is can be implemented by simply indexing directly.
+
+* Categorical Embeddings for example: https://www.fast.ai/2018/04/29/categorical-embeddings/
+
+
+## Cross-Entropy Loss (log loss)
+
+source: https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html
+
+binary classification:
+
+$- (y * log(p) + (1 - y) log(1 - p))$
+
+if class n > 2:
+
+
+$-\sum_{c=1}^My_{o,c}\log(p_{o,c})$
+
+```
+def CrossEntropy(yHat, y):
+    if y == 1:
+      return -log(yHat)
+    else:
+      return -log(1 - yHat)
+```
+
+## Softmax Activation Function
+
+* ussually at the output layer and used for multi-class classification. 
+
+* Compute for the normalized exponential function of all units in the layer. 
+
+```
+# calculate the softmax of a vector
+def softmax(vector):
+	e = exp(vector)
+	return e / e.sum()
+```
+
+"squashes a vector of size k between 0 and 1. The sum of the whole vector equals 1. 
+
+
+## CTC -  Connectionist Temporal Classification
+
+* source: https://towardsdatascience.com/intuitively-understanding-connectionist-temporal-classification-3797e43a86c
+
+Used in speech recognition, handwriting recognition, and other sequence problems. 
+
+* a way to get around not knowing alignment between input and the output.
+
+* To get the probability of an output given an input, CTC works by summing over the probability of all possible alignments between the two. 
+
+## Latency
+
+* The delay before a transfer of data begins following an isntructoin for its transfer
+
+## Up-Convolutional Layer
+
+`ConvTranspose2d` for example. 
+
+* Suppose you have channels of 28x28 images and you need ti upsample to less chanlles of 56x56 images, this is the layer type you could use. A stride = 2 increases by a factor of 2. 
+
+## Tensor Sizes - PyTorch
+
+`[1, 1024, 14, 14]`
+
+`[64, 3, 572, 572]`
+
+`[batch_size, num_channels, width, height]`
+
+
+## mAP - mean average precision
+
 
