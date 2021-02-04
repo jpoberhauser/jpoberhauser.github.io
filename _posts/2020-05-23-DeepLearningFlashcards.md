@@ -188,4 +188,39 @@ Used in speech recognition, handwriting recognition, and other sequence problems
 
 ## mAP - mean average precision
 
+an overall view of the whole precision/recall curve. 
+
+* Pick a confidence threshold so that recall is equal to each of `[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]` so for example you would pick thresholds like `[.9999, .98, .976, .96, .94, .93, .925, .85, .65, .5, .01 ]`
+
+At each of those thresholds, calcualte **precision** and then average of all of them: so something you could get for your precision would be:
+`[1, .99, .9, .85, .75, .7, .68, .65, .64, .6, .1]` and then take the average of this precision vector.
+
+
+## Conv Net Architecure Patterns
+
+Inout -> [[[Conv -> ReLU] * N] -> Pool] -> [FC -> ReLU] * k -> FC
+
+## How should you normalize train/valid image sets?
+
+* source fastbook, fast.ai
+
+* You want to normalize train set with `train_mean` and `train_std` and also normalize the **validation** with `train_mean` and `train_std`.
+
+Why?  If you had mostly green frogs in your train set and mostly red frogs in your validation set, ad you use their respective mean and std, you wouldnt be able to tell them apart and they would be on totally different units. 
+
+## Transfer Learning (CNNs)
+
+1. Replace the lat layer (the number of outputs needs to amtch the number of classes you want to predict)
+
+2. Fine-tune the new layers
+
+3. Fine tune the earlier layers with a small `lr` 
+
+## Precision vs. Recall
+
+
+
+
+
+
 
