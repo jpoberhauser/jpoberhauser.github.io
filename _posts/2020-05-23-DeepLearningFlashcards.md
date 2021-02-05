@@ -237,7 +237,62 @@ ${\frac{tp}{tp+fp}}$
 
 * With ResNets, the gradients can flow directly through the **skip connections** backwards from the later layers to initial filters. 
 
+## Resnets
+
+* Add simple trick of allowing skip connections (the possibility to lean idenitity functoins and skip layers that are not useful).
+
+* Help with vanishing gradient and allows for deeper network architectures
 
 
+## Update function for Backprop (without PyTorch):
+
+```
+for iteration in range(n_epochs):
+	prediction = input.dot(weights)
+	error = (goal_prediction - prediction) **2
+	delta = goal_prediction - prediction
+	weights = weights - (alpha * (input * delt)
+```
+
+
+
+$w_t = w_{t-1} - learningrate * {\frac{dL}{d_{wt-w}}$
+
+
+
+```
+def update(x, y, lr):
+	wd = .0001
+	y_hat = model(x)
+	for p in model.parameters(): 
+		w += p.sum()
+	loss = loss_func(y_hat, y)
+	loss.backward()
+	for p in model.parameters():
+		p.sub__(lr + p.grad)
+		p.grad_zero()
+```
+
+
+## logs review
+
+* logs answer the question: what power do we need to raise the base(10) to get the answer?
+
+log_n(100) -> 10^x  =  100    x = 2
+
+
+## Output size (convolutions)
+
+O = [(i + 2p - k)  /  s  ]
+
+where i =  input_size
+
+p = paddings
+
+k = kernel size
+
+and s = stride
+
+[] = "floor" function
 
 
