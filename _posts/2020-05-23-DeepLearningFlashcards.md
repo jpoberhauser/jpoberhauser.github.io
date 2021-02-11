@@ -296,3 +296,34 @@ and s = stride
 [] = "floor" function
 
 
+## Initialization Techniques
+
+Great papers:
+
+
+* Understanding the difficulty of training deep feedforward neural networks
+
+* Delving deep into Rectifiers
+
+* All you need is a good init
+
+* Exact solutions to the nonlinear dynamics of learning deep linear neural networks
+
+* Fixup initializations
+
+* self-normalizing neural networks 
+
+## Basic Structure of NN in PyTorch
+
+```
+class myModel():
+  def __init__(self, n_in, num_hidden, n_out):
+    super().__init__()
+    self.layers = [nn.Linear(n_in, num_hidden), nn.ReLU(), nn.Linear(num_hidden, n_out)]
+
+
+  def __call__(self):
+    for l in self.layers:
+      x = l(x)
+    return x
+```
