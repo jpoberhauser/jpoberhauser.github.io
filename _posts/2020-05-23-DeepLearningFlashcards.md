@@ -327,3 +327,52 @@ class myModel():
       x = l(x)
     return x
 ```
+
+## yield in python
+
+`yield` is a co-routine in python. You can have a function that doesnt return just one thing once, you can ask for it lots of times. When you call an iterator, it returns something that calls `next` on! It returns the next thing that is yielded. 
+
+https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/
+
+`iter()` generates the co-routine
+
+`next()` gets the next thign that is yielded. 
+
+## minimal train loop: PyTorch
+
+```
+def fit():
+    for epoch in range(epochs):
+        for xb,yb in train_dl:
+            pred = model(xb)
+            loss = loss_func(pred, yb)
+            loss.backward()
+            opt.step()
+            opt.zero_grad()
+```
+## minimal train and validation loop: PyTorch:
+
+```
+def fit(epochs, model, loss_func, opt, train_dl, valid_dl):
+    for epoch in range(epochs):
+        # Handle batchnorm / dropout
+        model.train()
+#         print(model.training)
+        for xb,yb in train_dl:
+            loss = loss_func(model(xb), yb)
+            loss.backward()
+            opt.step()
+            opt.zero_grad()
+
+        model.eval()
+#         print(model.training)
+        with torch.no_grad():
+            tot_loss,tot_acc = 0.,0.
+            for xb,yb in valid_dl:
+                pred = model(xb)
+                tot_loss += loss_func(pred, yb)
+                tot_acc  += accuracy (pred,yb)
+        nv = len(valid_dl)
+        print(epoch, tot_loss/nv, tot_acc/nv)
+    return tot_loss/nv, tot_acc/nv
+```
