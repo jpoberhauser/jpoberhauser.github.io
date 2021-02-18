@@ -338,6 +338,65 @@ https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/
 
 `next()` gets the next thign that is yielded. 
 
+
+
+## Train loop with and without Pytorch
+
+ * fast.ai
+ 
+ 
+ We can go from this: 
+ 
+```
+for epoch in range(epochs):
+    for i in range((n-1)//bs + 1):
+#         set_trace()
+        start_i = i*bs
+        end_i = start_i+bs
+        xb = x_train[start_i:end_i]
+        yb = y_train[start_i:end_i]
+        loss = loss_func(model(xb), yb)
+
+        loss.backward()
+        with torch.no_grad():
+            for l in model.layers:
+                if hasattr(l, 'weight'):
+                    l.weight -= l.weight.grad * lr
+                    l.bias   -= l.bias.grad   * lr
+                    l.weight.grad.zero_()
+                    l.bias  .grad.zero_()
+```
+To this (which now includes validation) : 
+
+```
+def fit(epochs, model, loss_func, opt, train_dl, valid_dl):
+    for epoch in range(epochs):
+        # Handle batchnorm / dropout
+        model.train()
+#         print(model.training)
+        for xb,yb in train_dl:
+            loss = loss_func(model(xb), yb)
+            loss.backward()
+            opt.step()
+            opt.zero_grad()
+
+        model.eval()
+#         print(model.training)
+        with torch.no_grad():
+            tot_loss,tot_acc = 0.,0.
+            for xb,yb in valid_dl:
+                pred = model(xb)
+                tot_loss += loss_func(pred, yb)
+                tot_acc  += accuracy (pred,yb)
+        nv = len(valid_dl)
+        print(epoch, tot_loss/nv, tot_acc/nv)
+    return tot_loss/nv, tot_acc/nv
+    
+```
+
+
+
+
 ## minimal train loop: PyTorch
 
 ```
