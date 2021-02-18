@@ -435,3 +435,6 @@ def fit(epochs, model, loss_func, opt, train_dl, valid_dl):
         print(epoch, tot_loss/nv, tot_acc/nv)
     return tot_loss/nv, tot_acc/nv
 ```
+
+
+
