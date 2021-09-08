@@ -11,6 +11,9 @@ Follow these instructions to re-install and attempt to run `neuron-top` again.
 
 https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-guide/neuron-runtime/nrt-troubleshoot.html#neuron-driver-installation-fails
 
+
+https://forums.aws.amazon.com/thread.jspa?threadID=337999&tstart=0
+
 This has solved my inferentia/neuron issues a couple of times. 
 
 ### 2. Getting random boxes and predictions
