@@ -16,10 +16,27 @@ https://forums.aws.amazon.com/thread.jspa?threadID=337999&tstart=0
 
 This has solved my inferentia/neuron issues a couple of times. 
 
-### 2. Getting random boxes and predictions
+If installation log is not available, check whether the module is loaded.
 
-This one is a bit harder to debug, but this usually happens when you send an image for inference to the neuron-compiled model and the results are basically random boxes on the image. The solution to this is actually the same as in #1, given that you knew that you were getting predictions that made sense before, and all of a sudden they stop making sense. 
+`$ lsmod | grep neuron`
 
-### 3. Converting models to neuron
+If the above has no output then that means aws-neuron-dkms installation is failed.
+
+Uninstall aws-neuron-dkms `sudo apt remove aws-neuron-dkms` or `sudo yum remove aws-neuron-dkms`
+
+Install kernel headers for the current kernel `sudo apt install -y linux-headers-$(uname -r)` or `sudo yum install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)`
+
+Install aws-neuron-dkms `sudo apt install aws-neuron-dkms` or `sudo yum install aws-neuron-dkms`
+
+Restart runtime using `sudo systemctl restart neuron-rtd` command.
+
+
+
+https://github.com/aws/aws-neuron-sdk/issues/325
+
+
+
+
+
 
 
