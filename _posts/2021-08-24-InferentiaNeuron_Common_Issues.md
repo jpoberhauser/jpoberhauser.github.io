@@ -16,6 +16,8 @@ https://forums.aws.amazon.com/thread.jspa?threadID=337999&tstart=0
 
 This has solved my inferentia/neuron issues a couple of times. 
 
+## To reinstall:
+
 If installation log is not available, check whether the module is loaded.
 
 `$ lsmod | grep neuron`
