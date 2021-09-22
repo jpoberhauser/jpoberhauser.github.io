@@ -9,7 +9,12 @@
 
 * Grokking Deep Learning
 
-## Summary and Takeaways
+## Goal
+
+* The  goal of using derivatives is to guide the model training loop in which directions the parameters of the model need to be updated. 
+* We want to optimize the loss function with respoect to the parameters using **gradient descent**
+
+
 
 
 
