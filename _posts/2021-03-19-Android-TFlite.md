@@ -1,11 +1,13 @@
 # How to get Object Detection Android App using TFLite:
 
 
-1.) Clone this repo to your local:
+
+### 1.) Clone this repo to your local:
 
 `https://github.com/hunglc007/tensorflow-yolov4-tflite`
 
-2.) Make sure the changes on this PR are in the files you pulled:
+
+### 2.) Make sure the changes on this PR are in the files you pulled:
 
 `https://github.com/hunglc007/tensorflow-yolov4-tflite/pull/162/commits/5b11ef71eb5e7a700aa3fd2e8b9a66235a5ec118`
 
@@ -14,11 +16,13 @@ Notable changes here:
   * app/src/main/java/org/tensorflow/lite/examples/detection/tflite/YoloV4Classifier.java 
  
  
-3.) Convert weights to `.tflite`
 
-Have your `.tflite` and your `.txt` with classes ready
+### 3.) Convert weights to `.tflite`
 
-4.) Put both your `.tflite` and your `.tx`t with classes here:
+Have your `.tflite` and your `.txt` with classes ready. You can do so using the above github link as well. 
+
+
+### 4.) Put both your `.tflite` and your `.tx`t with classes here:
 
 `tensorflow-yolov4-tflite/android/app/src/main/assets`
 
@@ -32,7 +36,8 @@ detect.tflite          labelmap.txt           yolov3tiny-416.tflite  yolov4tiny-
 ```
 
 
-5.) Go to edit the file (local) :
+
+###  5.) Go to edit the file (local) :
 
 `tensorflow-yolov4-tflite/android/app/src/main/java/org/tensorflow/lite/examples/detection/MainActivity.java`
 
@@ -46,7 +51,7 @@ There, look for lines: (right now they are lines 77 & 79)
 
 
 
-6.) Next go to edit the file (local): 
+### 6.) Next go to edit the file (local): 
 
 `tensorflow-yolov4-tflite/android/app/src/main/java/org/tensorflow/lite/examples/detection/DetectorActivity.java`
 
@@ -59,10 +64,13 @@ look for lines: (55-60)
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/own_classes.txt";
 ```
 
-Notice how you have to change the TF_OD_API_INPUT_SIZE to be 416,
-Change TF_OD_API_IS_QUANTIZED to false
-Change TF_OD_API_MODEL_FILE to reflect your .tflite model
-Change TF_OD_API_LABELS_FILE to reflect your classes.txt file
+Notice how you have to change the `TF_OD_API_INPUT_SIZE` to be 416 or the desired size 
+
+
+* Change `TF_OD_API_IS_QUANTIZED` to false
+
+* Change `TF_OD_API_MODEL_FILE` to reflect your .tflite model
+* Change `TF_OD_API_LABELS_FILE` to reflect your classes.txt file
 
 
 7.) Build gradle
