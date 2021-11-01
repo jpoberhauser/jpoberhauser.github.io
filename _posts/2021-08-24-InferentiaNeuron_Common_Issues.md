@@ -18,6 +18,22 @@ This has solved my inferentia/neuron issues a couple of times.
 
 ## To reinstall:
 
+New version:
+
+```
+sudo apt-get reinstall aws-neuron-dkms aws-neuron-runtime-base aws-neuron-runtime aws-neuron-tools
+```
+
+and then:
+
+and then follow pytorch 1.9 steps for inference on ubuntu
+
+https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-intro/pytorch-setup/pytorch-install.html#install-neuron-pytorch
+
+
+
+#### Old Version
+
 If installation log is not available, check whether the module is loaded.
 
 `$ lsmod | grep neuron`
