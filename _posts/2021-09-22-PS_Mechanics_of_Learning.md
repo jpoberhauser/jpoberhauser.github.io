@@ -38,6 +38,6 @@ The **gradient**: answers the question: "what is the effect of the weight on the
 
 We need to use chain rule to compute the derivatibe of loss w.r.t to **its inputs * derivative of model w.r.t the parameter.** 
 
-$d_{loss}/d_{parameter} = $
+$d_{loss}/d_{parameter} = d_{loss}/d{modelOutput} * d_{modelOutput} / d_{parameter} $
 
 ## PyTorch Code
