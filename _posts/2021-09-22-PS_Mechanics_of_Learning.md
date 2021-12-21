@@ -33,11 +33,24 @@ The **gradient**: answers the question: "what is the effect of the weight on the
 
 * During training, we want to compute the individual derivatives of the loss with respect to each parameter and put them in a vector of derivatives. 
 
+
+![Gradient Illustration](imgs/93295.jpeg)
+
+
 ## Recipe
 
 
 We need to use chain rule to compute the derivative of loss w.r.t to **its inputs * derivative of model w.r.t the parameter.** 
 
 $d_{loss}/d_{parameter} = d_{loss}/d{modelOutput} * d_{modelOutput} / d_{parameter} $
+
+* Normalizing inputs: 
+
+    * "The weight and bias live in a differently scaled space. If this is the case, a learning rate that's large enough to meaningfully ipdate one will be so large as to be usntalble for the other." --p.119
+    * By normalizing inputs, the gradients will now be of similar magnitude, as we can use a single learning rate for both parameters. 
+
+In PyTorch, the gradient gets calcualted and updated using **autograd** . "given a forward expression, no matter how nested, PyTorch will automatically provide the gradient of that expression with respect to its input parameters. 
+
+
 
 ## PyTorch Code
