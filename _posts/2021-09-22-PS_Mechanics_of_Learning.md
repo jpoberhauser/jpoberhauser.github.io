@@ -21,24 +21,30 @@ From grokking deep learning:
 * "Hey, if you want this node to be x amount higher, then each of these previous four nodes needs to be `x*weights_1_2` amoutn higher/lower, because these weights were amplifying the prediction by `weights_1_2` times." -p.120
 
 
-```
-loss_rate_of_change_b = 
-    (loss_fn(model(t_u, w, b + delta), t_c) -    # If you increase b, you get 110 loss for example
-    (loss_fn(model(t_u, w, b - delta), t_c) /    # If you decrease b, you get 95 loss for example
-    2.0 * delta                                  # For this example the change is positive, so we need to decrease b 
-    
-    
-b = b - learning_rate * loss_rate_of_change_b
-```
 
-## Definitions
+
+## Gradient
 
 The **gradient**: answers the question: "what is the effect of the weight on the loss function?"
 
-* During training, we want to compute the individual derivatives of the loss with respect to each parameter and put them in a vector of derivatives. 
-
-
 ![Gradients Illustrated](/images/83295.png "Examples")
+
+### Calculating both direction and amount from error (p.56)
+
+Andrew Trask describes this overall process as predict --> compare --> learn
+
+```
+for iteration in range(20):
+    pred = input * weight
+    error = (pred - goal_pred) ** 2
+    direction_and_amount = (pred - goal_pred) * input
+    weight = weight - direction_and_amount
+```
+
+The code above is really the basis of gradient descent. In a single line of code, we are able to calculate both the direction and the amount by which we should make changes to the weight parameters in order to get us a step closer towards some minimum of the loss function. There are some modifications to the above code in practice, inlcuding learning rates, but that really is the main idea. 
+
+
+`(pred - goal_pred)` 
 
 
 ## Recipe
@@ -57,4 +63,14 @@ In PyTorch, the gradient gets calcualted and updated using **autograd** . "given
 
 
 
-## PyTorch Code
+##  Code
+
+```
+loss_rate_of_change_b = 
+    (loss_fn(model(t_u, w, b + delta), t_c) -    # If you increase b, you get 110 loss for example
+    (loss_fn(model(t_u, w, b - delta), t_c) /    # If you decrease b, you get 95 loss for example
+    2.0 * delta                                  # For this example the change is positive, so we need to decrease b 
+    
+    
+b = b - learning_rate * loss_rate_of_change_b
+```
