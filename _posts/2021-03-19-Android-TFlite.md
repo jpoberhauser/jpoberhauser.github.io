@@ -1,6 +1,11 @@
-# How to get Object Detection Android App using TFLite:
+# Making an Object Detection App in Android with TF-Lite
 
+Sometimes, it is useful to do object detection on an edge device. One of the difficulties with doing so is getting a neural network  small and fast enough to run on a small device, usually without a GPU. In this post, there is a detailed recipe to:
 
+1. Train a model using yolov4
+2. Convert a yolov4-tiny model to Tensorflow
+3. Convert a Tensorflow model to TF-lite
+4. Add the model and make changes to a full Android App
 
 ### 1.) Clone this repo to your local:
 
