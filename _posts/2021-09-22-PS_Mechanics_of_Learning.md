@@ -1,13 +1,12 @@
 # Mechanics of Learning
 
 
-### Sources: 
+How do neural networks learn? In this post, I consolidate all of the snippets and useful tips that helped me understand neural networks, backpropagation, and other techniques that nn use to learn. The three sources that I used the most are:
 
-* Deep Learning with PyTorch Ch.5
+1. Deep Learning with PyTorch by Eli Stevens, Luca Antiga, Thomas Viehmann (link here https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf)
+2. Grokking Deep Learning by Andrew W. Trask
+3. CS231n Winter 2016: Lecture 4: Backpropagation, Neural Networks 1 lecture by Andrej Karpathy. (Link: https://www.youtube.com/watch?v=i94OvYb6noo)
 
-* https://www.youtube.com/watch?v=i94OvYb6noo]
-
-* Grokking Deep Learning
 
 ## Goal
 
