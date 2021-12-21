@@ -12,7 +12,7 @@ How do neural networks learn? In this post, I consolidate all of the snippets an
 
 * The  goal of using derivatives is to guide the model training loop in which directions the parameters of the model need to be updated. 
 
-* We want to optimize the loss function with respoect to the parameters using **gradient descent**
+* We want to optimize the loss function with respect to the parameters using **gradient descent**
 
 From grokking deep learning:
 
