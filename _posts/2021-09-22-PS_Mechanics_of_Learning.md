@@ -15,6 +15,11 @@
 
 * We want to optimize the loss function with respoect to the parameters using **gradient descent**
 
+From grokking deep learning:
+
+* "Given a shared error, the network needs to figure out which weights contributed (so they can be adjusted) and which weights did **not** contribute (so they can be left alone. 
+
+* "Hey, if you want this node to be x amount higher, then each of these previous four nodes needs to be `x*weights_1_2` amoutn higher/lower, because these weights were amplifying the prediction by `weights_1_2` times." -p.120
 
 
 ```
