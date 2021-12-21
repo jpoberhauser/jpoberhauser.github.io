@@ -34,7 +34,7 @@ The **gradient**: answers the question: "what is the effect of the weight on the
 * During training, we want to compute the individual derivatives of the loss with respect to each parameter and put them in a vector of derivatives. 
 
 
-![Gradient Illustration](images/83295.png)
+![Example policies ](/images/image_policies.png "5 Example Policies")
 
 
 ## Recipe
