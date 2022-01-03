@@ -4,8 +4,55 @@
 {:toc}
 
 
+## Probability
+
+### Sum Rule
+
+* If you have mutually exclusive events:
+
+	P(A or b) = P(A) + P(B)
+	
+	If you have a die, what is the probability of rolling a 3 OR a 4?
+	
+	P(3 or 4) = P(3) + P(4) = 1/6 + 1/6 = 2/6 = 1/3
+	
+* If you dont have mutually exclusive events:
+
+In this case you ahve to remove their overlap (the probability that both of these happen so as not to over count.
+
+12 Roman coins, 6 are silver
+8 Greek coins, 3 are silver.
+
+P(Silver or Roman) = P(Silver) + (Roman) --> This would overcount the probabilities so we need:
+
+P(Silver or Roman) = P(Silver) + (Roman) - P(Silver and Roman)
+
+P(Silver or Roman) = 9/20 + 12/20 - 6/20 = 15/20 = 0.75
+
+## Product Rule
+
+P(A and B) = P(A)P(B)
+
+* IF **independent events** (meaning the probability of being female does not affect the probability of being brow-eyed and vice-versa)
+
+P(female and brown-eyed) = P(female) * P(brown-eyed)
+
+P(female and brown-eyed) = 0.5 * 0.8 = 0.4
+
+* IF **NOT independent events**:
+
+    P(A and B) = P(B|A)P(A)
 
 
+
+
+
+	
+mental model: how do you decide if you have to use product rule or sum rule (and vs or)?
+	* if you have OR, then the probabilites must be summed since you are increasing the event space where you  can be right.
+	* If you have AND, (this usually makes things less likely since two things have to happen instead of one. So here you multiply probabilities. 
+
+### 
 
 ## Panoptic Segmentation 
 
