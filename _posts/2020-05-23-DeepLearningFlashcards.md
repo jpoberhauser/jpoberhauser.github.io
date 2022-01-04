@@ -29,7 +29,7 @@ P(Silver or Roman) = P(Silver) + (Roman) - P(Silver and Roman)
 
 P(Silver or Roman) = 9/20 + 12/20 - 6/20 = 15/20 = 0.75
 
-## Product Rule
+### Product Rule
 
 P(A and B) = P(A)P(B)
 
