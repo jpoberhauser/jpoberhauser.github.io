@@ -52,7 +52,6 @@ mental model: how do you decide if you have to use product rule or sum rule (and
 	* if you have OR, then the probabilites must be summed since you are increasing the event space where you  can be right.
 	* If you have AND, (this usually makes things less likely since two things have to happen instead of one. So here you multiply probabilities. 
 
-### 
 
 ## Panoptic Segmentation 
 
@@ -104,7 +103,18 @@ For a given class:
     4. Again, calculate IoU to all other proposals, eliminatie boxes w/ IoU higher than `N` from `B`.
     5. Repeat
     
-## Discrimitavie Learning Rates
+    
+## Label Smoothing
+
+[paper](https://arxiv.org/pdf/1902.04103.pdf)
+
+This modifies the hard ground truth labeling in cross entropy loss. 
+
+Detection layers will usually compute a probability distribution over all classes with the softmaz function (from the raw outputs of the model). With **cross entropy** we usually compare a one-hot encoded distribution where the correct class has probability one and all others have 0. 
+
+Label smoothing was proposed by Szegedy et al. as a form of regularization. This technique reduces the model’s confidence, measured by the difference between the largest and smallest logits.
+
+## Discriminative Learning Rates
 
 * source: fast.ai
 
