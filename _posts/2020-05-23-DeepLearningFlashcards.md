@@ -55,21 +55,21 @@ mental model: how do you decide if you have to use product rule or sum rule (and
 
 ## Panoptic Segmentation 
 
-Source: https://arxiv.org/abs/1801.00868
+[Paper:](https://arxiv.org/abs/1801.00868)
 
 We propose and study a task we name panoptic segmentation (PS). Panoptic segmentation unifies the typically distinct tasks of semantic segmentation (assign a class label to each pixel) and instance segmentation (detect and segment each object instance). 
 
 
 ## Transformers
 
-source: https://arxiv.org/pdf/1706.03762.pdf
+[Paper:](https://arxiv.org/pdf/1706.03762.pdf)
 
 Architecture that proves that attention-only mechanisms (without RNNs like LSTMs) can improve on the results in translation or seq2seq tasks. 
 
 
 ## Attention
 
-source: https://arxiv.org/pdf/1706.03762.pdf
+[Paper:](https://arxiv.org/pdf/1706.03762.pdf)
 
 The attention mechanism looks at an input sequence and decides at each step which other parts of the sequence are most "important". This information gets passed along in translation encode-decoders to help the seq2seq model. 
 
