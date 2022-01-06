@@ -10,11 +10,11 @@
 
 * If you have mutually exclusive events:
 
-	P(A or b) = P(A) + P(B)
+	`P(A or b) = P(A) + P(B)`
 	
 	If you have a die, what is the probability of rolling a 3 OR a 4?
 	
-	P(3 or 4) = P(3) + P(4) = 1/6 + 1/6 = 2/6 = 1/3
+	`P(3 or 4) = P(3) + P(4) = 1/6 + 1/6 = 2/6 = 1/3`
 	
 * If you dont have mutually exclusive events:
 
@@ -23,53 +23,55 @@ In this case you ahve to remove their overlap (the probability that both of thes
 12 Roman coins, 6 are silver
 8 Greek coins, 3 are silver.
 
-P(Silver or Roman) = P(Silver) + (Roman) --> This would overcount the probabilities so we need:
+`P(Silver or Roman) = P(Silver) + (Roman)` --> This would overcount the probabilities so we need:
 
-P(Silver or Roman) = P(Silver) + (Roman) - P(Silver and Roman)
+`P(Silver or Roman) = P(Silver) + (Roman) - P(Silver and Roman)`
 
-P(Silver or Roman) = 9/20 + 12/20 - 6/20 = 15/20 = 0.75
+`P(Silver or Roman) = 9/20 + 12/20 - 6/20 = 15/20 = 0.75`
 
 ### Product Rule
 
-P(A and B) = P(A)P(B)
+`P(A and B) = P(A)P(B)`
 
 * IF **independent events** (meaning the probability of being female does not affect the probability of being brow-eyed and vice-versa)
 
-P(female and brown-eyed) = P(female) * P(brown-eyed)
+`P(female and brown-eyed) = P(female) * P(brown-eyed)`
 
-P(female and brown-eyed) = 0.5 * 0.8 = 0.4
+`P(female and brown-eyed) = 0.5 * 0.8 = 0.4`
 
 * IF **NOT independent events**:
 
-    P(A and B) = P(B|A)P(A)
+    `P(A and B) = P(B|A)P(A)`
 
 
 
 
 
 	
-mental model: how do you decide if you have to use product rule or sum rule (and vs or)?
+**mental mode**l: how do you decide if you have to use product rule or sum rule (and vs or)?
+
 	* if you have OR, then the probabilites must be summed since you are increasing the event space where you  can be right.
+	
 	* If you have AND, (this usually makes things less likely since two things have to happen instead of one. So here you multiply probabilities. 
 
 
 ## Panoptic Segmentation 
 
-[Paper:](https://arxiv.org/abs/1801.00868)
+[Paper link](https://arxiv.org/abs/1801.00868)
 
 We propose and study a task we name panoptic segmentation (PS). Panoptic segmentation unifies the typically distinct tasks of semantic segmentation (assign a class label to each pixel) and instance segmentation (detect and segment each object instance). 
 
 
 ## Transformers
 
-[Paper:](https://arxiv.org/pdf/1706.03762.pdf)
+[Paper link](https://arxiv.org/pdf/1706.03762.pdf)
 
 Architecture that proves that attention-only mechanisms (without RNNs like LSTMs) can improve on the results in translation or seq2seq tasks. 
 
 
 ## Attention
 
-[Paper:](https://arxiv.org/pdf/1706.03762.pdf)
+[Paper link](https://arxiv.org/pdf/1706.03762.pdf)
 
 The attention mechanism looks at an input sequence and decides at each step which other parts of the sequence are most "important". This information gets passed along in translation encode-decoders to help the seq2seq model. 
 
@@ -79,6 +81,7 @@ The attention mechanism looks at an input sequence and decides at each step whic
   2. weight decay (L2 regularizatoin)
   3. data augmentation
   4. batch normalization
+  5. label smoothing
 
 ## Test Time Augmentation
 
