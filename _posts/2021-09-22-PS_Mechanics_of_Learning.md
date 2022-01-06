@@ -74,3 +74,7 @@ loss_rate_of_change_b =
     
 b = b - learning_rate * loss_rate_of_change_b
 ```
+
+## Understanding Backprop
+
+Resources [here](https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b)
