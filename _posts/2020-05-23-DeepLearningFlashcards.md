@@ -61,6 +61,8 @@ In this case you ahve to remove their overlap (the probability that both of thes
 
 We propose and study a task we name panoptic segmentation (PS). Panoptic segmentation unifies the typically distinct tasks of semantic segmentation (assign a class label to each pixel) and instance segmentation (detect and segment each object instance). 
 
+* In instance segmentation each pixel has a unique class. We perform calssification for **every single pixel in the image**
+
 
 ## Transformers
 
@@ -91,19 +93,27 @@ at **inference time**:
   3. Take average of predictions and use tha as final prediction
   
 ## NMS (non-maximum suppression)
+
 * https://www.coursera.org/lecture/convolutional-neural-networks/non-max-suppression-dvrjH
 
 * Technique used in some object detectors to remove duplicate boxes. Many detectors generate anchors or region proposals and then need a way to remove boxes that are essentially finding the same thing. The algorithm is basically:
 
 For a given class:
 
-  input: list of several proposal boxes `B`, corresponding confidence scores `S` and overlap threshold `N`.
-  Output: list of filtered proposals `D`
-  Algorithm:
+  **input**: list of several proposal boxes `B`, corresponding confidence scores `S` and overlap threshold `N`.
+  
+  **Output**: list of filtered proposals `D`
+  
+  **Algorithm**:
+  
     1. Select proposal with highest confidence score, remove it from `B` and add it to proposal list `D`.
+    
     2. Compare that proposal with all others, calculate IoI to all other proposals. If IoU is greater than threshold `N`, remove proposal from `B`.
+    
     3. Again, take proposal with highest confidence for `B` and put it in `D`.
+    
     4. Again, calculate IoU to all other proposals, eliminatie boxes w/ IoU higher than `N` from `B`.
+    
     5. Repeat
     
     
@@ -125,7 +135,7 @@ Label smoothing was proposed by Szegedy et al. as a form of regularization. This
 
  * The first layers, (more general patterns) are close to a local min already, so went a small lr to not move around too much. 
  
- * The later final layes have not been trained a lot on your specific task, so alerger lr is needed to get close to the minimum. 
+ * The later final layes have not been trained a lot on your specific task, so a larger lr is needed to get close to the minimum. 
 
 ## PCA
 
@@ -137,20 +147,19 @@ Label smoothing was proposed by Szegedy et al. as a form of regularization. This
 
 or another way to look at it: Covariance matrix --> Eigen decomposition --> sort by eigen values --> keep eigen vectors w/ highest eigen values
 
-## Image Segmentation
-
-* source fast.ai
-
-* Each pixel has a unique class. We perform calssification for **every single pixel in the image**
 
 
-## Deterministic (lagorithm, process, model, etc..)
+
+
+## Deterministic (algorithm, process, model, etc..)
 
 * A model, procedure, algorithm etc, 
 
-  * whose resulting behavior is **entirely** determind by its initial state and inputs, and which is not random or stochastic.
+  * whose resulting behavior is **entirely** determined by its initial state and inputs, and which is not random or stochastic.
   
 ## Mixup (Data augmentation technique)
+
+[Paper link](https://arxiv.org/pdf/1710.09412.pdf)
 
 A data augmentation technique:
 
@@ -158,10 +167,8 @@ A data augmentation technique:
   
   * take a weighted average (with the same weights) of the 2 image labels
   
-  * Create virtual training examples where you have an averaged $x_i$ and $x_j$ input vectors and $y_i$, $y_j$ one hot encoded labels. 
+  * create virtual training examples where you have an averaged $x_i$ and $x_j$ input vectors and $y_i$, $y_j$ one hot encoded labels. 
   
-  * paper: https://arxiv.org/pdf/1710.09412.pdf
-
 
 ## FLOPS
 
@@ -214,7 +221,7 @@ def softmax(vector):
 	return e / e.sum()
 ```
 
-"squashes a vector of size k between 0 and 1. The sum of the whole vector equals 1. 
+"squashes a vector of size k between 0 and 1. The sum of the whole vector equals 1. "
 
 
 ## CTC -  Connectionist Temporal Classification
@@ -239,7 +246,6 @@ Used in speech recognition, handwriting recognition, and other sequence problems
 
 ## Tensor Sizes - PyTorch
 
-`[1, 1024, 14, 14]`
 
 `[64, 3, 572, 572]`
 
@@ -252,7 +258,7 @@ an overall view of the whole precision/recall curve.
 
 * Pick a confidence threshold so that recall is equal to each of `[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]` so for example you would pick thresholds like `[.9999, .98, .976, .96, .94, .93, .925, .85, .65, .5, .01 ]`
 
-At each of those thresholds, calcualte **precision** and then average of all of them: so something you could get for your precision would be:
+At each of those thresholds, calculate **precision** and then average of all of them: so something you could get for your precision would be:
 `[1, .99, .9, .85, .75, .7, .68, .65, .64, .6, .1]` and then take the average of this precision vector.
 
 
@@ -277,11 +283,16 @@ Why?  If you had mostly green frogs in your train set and mostly red frogs in yo
 3. Fine tune the earlier layers with a small `lr` 
 
 ## Precision vs. Recall
- in words:
+
  
  **recall** "When the ground truth is **yes** how often does it predict **yes**". This is (in a simplistic view) a measure that is made worse by False Negatives.
  
+ * Recall is also a measure of **completeness**: How many actual positives were predicted positive.
+ 
  **precision** "When the model predicts **yes** how often is it correct?".  This is (in a simplistic view) a measure that is made worse by False Positives.
+ 
+ * Precision is also a measure of **exactness**: How many predicted positives were actually positive.
+
 
 formulas: 
 
