@@ -507,6 +507,76 @@ def fit(epochs, model, loss_func, opt, train_dl, valid_dl):
     return tot_loss/nv, tot_acc/nv
 ```
 
+## PyTorch DataLoader & Dataset
+
+PyTorch Dataset, needs to include:
+
+	`__len__(self)`
+	
+	* This must return the length of the dataset
+	
+and 
+        `__geitem__(self)`
+	
+	* This must return one item from the dataset.
+	
+	
+## Pytorch multi-task Dataset:
+```
+class UTKFace(Dataset):
+    def __init__(self, image_paths):
+        # Mean and Std for ImageNet
+        mean=[0.485, 0.456, 0.406] # ImageNet
+        std=[0.229, 0.224, 0.225] # ImageNet
+
+        # Define the Transforms
+        self.transform = transforms.Compose([
+        transforms.ToTensor(),
+         transforms.Resize((200, 200)),
+         transforms.Normalize(mean=mean, std = std)
+         
+            ])
+        #TODO: Create 3 transforms: Resize, To Tensor, Normalize
+
+        # Set Inputs and Labels
+        self.image_paths = image_paths
+        self.images = []
+        self.ages = []
+        self.genders = []
+        self.races = []
+
+        for path in self.image_paths:
+              self.images.append(np.array(Image.open(path)))
+              img_name = path.split("/")[-1].split("_")
+              self.ages.append(int(img_name[0]))
+              self.genders.append(int(img_name[1]))
+              self.races.append(int(img_name[2]))
+              
+    def __len__(self):
+         return len(self.images)
+
+    def __getitem__(self, index):
+        # Load an Image
+        img = self.images[index]
+        # Transform it
+        img = self.transform(img)
+
+        # Get the Labels
+        age = ages[index]
+        gender = genders[index]
+        race = races[index] 
+        
+        # Return the sample of the dataset
+        sample = {"img": img, 
+                  "age": age,
+                  "gender": gender,
+                  "race": race}
+        return sample
+	
+```	
+
+
+
 ## Training recipes: tips and tricks
 Source: [A recipe for training neural networks](https://karpathy.github.io/2019/04/25/recipe/)
 
