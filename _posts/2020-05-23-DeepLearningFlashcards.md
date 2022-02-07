@@ -520,6 +520,7 @@ and
 	
 	* This must return one item from the dataset.
 	
+PyTroch DataLoader take scare of batching and shuffling _from_ a Dataset
 	
 ## Pytorch multi-task Dataset:
 ```
