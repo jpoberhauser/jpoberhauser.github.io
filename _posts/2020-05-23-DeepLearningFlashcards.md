@@ -576,6 +576,40 @@ class UTKFace(Dataset):
 	
 ```	
 
+## Multi-Task Papers:
+- Deep Relationship Networks (2015) (https://arxiv.org/abs/1506.02117)— The main idea is to add TN priors in the middle of tasks to force the communication
+
+- Fully Adapted Feature Sharing (2016) (https://arxiv.org/abs/1611.05377)— The idea is to discover the optimal neural networks by grouping similar tasks from the layer L to the layer 1.
+
+- Cross Stitch Networks (2017) (https://ieeexplore.ieee.org/document/7780802)— We're using cross-stitch units to make the neurons communicate with eachother
+
+- Cross Correlated Networks (2018) (https://arxiv.org/pdf/1805.05569.pdf)—The idea is very similar to cross-stitch networks but with more convolutions
+
+- Bayesian Networks (2017) (https://arxiv.org/abs/1705.07115)— The loss function is using trainable parameters to adjust the tasks weights.
+
+- Joint Many Tasks (https://arxiv.org/abs/1611.01587) — Multi-Task Learning for NLP
+
+- Sluice Networks (2017) (https://arxiv.org/abs/1705.08142) — A combination of everything used before (cross-stitch, etc)
+
+- Google Pathways (2021) (https://blog.google/technology/ai/introducing-pathways-next-generation-ai-architecture/)— Google's Multi-Task Learning Approach. This learns which parts of the network need to be activated.
+
+- Tesla HydraNets — https://www.thinkautonomous.ai/blog/?p=how-tesla-autopilot-works
+
+- and more on Tesla's hydranets: https://www.youtube.com/watch?v=g6bOwQdCJrc
+
+- multi camera inputs: You have extractors (which are abunch of rensets) that extract information. You send each input thtough the extractor. You send it to the multi-cam fusion, a.k.a space fusion (which makes one large image from all 8 camera inputs). You then send it to Time Fusion (3D CNNS, Transformers, RNNs) that combine inputs from different time steps.
+
+
+## Depth-wise Convolution
+
+1. what is the depth-wise convolution (Conv1x1)
+
+Answer: 
+Depthwise Convolution is a type of convolution where we apply a single convolutional filter for each input channel. In the regular 2D convolution performed over multiple input channels, the filter is as deep as the input and lets us freely mix channels to generate each element in the output. In contrast, depthwise convolutions keep each channel separate. To summarize the steps, we:
+
+1. Split the input and filter into channels.
+2. We convolve each input with the respective filter.
+3. We stack the convolved outputs together.
 
 
 ## Training recipes: tips and tricks
