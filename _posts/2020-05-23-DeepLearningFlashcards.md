@@ -252,11 +252,20 @@ A seprable convolution is a convolutional layer that divides the standard convol
 
 Nomral convolution, but we dont change the depth. In a traditional convolutional layer, we usually increade the depth, so we would go from 32 to 64 to 128. In depthwise, that number remains at 32 for example. 
 
+Depthwise Convolution is a type of convolution where we apply a single convolutional filter for each input channel. In the regular 2D convolution performed over multiple input channels, the filter is as deep as the input and lets us freely mix channels to generate each element in the output. In contrast, depthwise convolutions keep each channel separate. To summarize the steps, we:
+
+1. Split the input and filter into channels.
+2. We convolve each input with the respective filter.
+3. We stack the convolved outputs together.
+
+[source](https://paperswithcode.com/method/depthwise-convolution)
+
 
 ## Pointwise Convolution
 
 1x1 Convolution. Used when we want to keep the latent space representation. So for example, if we want to keep evrything that comes after the Encoder piece of the NN, (this is the latent space representation) in between encoder and decoder. 1x1 kernel. 
 
+Pointwise Convolution is a type of convolution that uses a 1x1 kernel: a kernel that iterates through every single point. This kernel has a depth of however many channels the input image has. It can be used in conjunction with depthwise convolutions to produce an efficient class of convolutions known as depthwise-separable convolutions.
 
 ## Tensor Sizes - PyTorch
 
