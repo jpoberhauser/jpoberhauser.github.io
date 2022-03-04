@@ -244,6 +244,20 @@ Used in speech recognition, handwriting recognition, and other sequence problems
 
 * Suppose you have channels of 28x28 images and you need ti upsample to less chanlles of 56x56 images, this is the layer type you could use. A stride = 2 increases by a factor of 2. 
 
+## Separable Convolution
+
+A seprable convolution is a convolutional layer that divides the standard convolutional layer into two layer: a **depthwise** convolution and a **pointwise** convolution. 
+
+## Depthwise Convolution
+
+Nomral convolution, but we dont change the depth. In a traditional convolutional layer, we usually increade the depth, so we would go from 32 to 64 to 128. In depthwise, that number remains at 32 for example. 
+
+
+## Pointwise Convolution
+
+1x1 Convolution. Used when we want to keep the latent space representation. So for example, if we want to keep evrything that comes after the Encoder piece of the NN, (this is the latent space representation) in between encoder and decoder. 1x1 kernel. 
+
+
 ## Tensor Sizes - PyTorch
 
 
