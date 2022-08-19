@@ -6,19 +6,19 @@ How do neural networks learn? In this post, I consolidate all of the snippets an
 1. Deep Learning with PyTorch by Eli Stevens, Luca Antiga, Thomas Viehmann (link here https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf)
 2. Grokking Deep Learning by Andrew W. Trask
 3. CS231n Winter 2016: Lecture 4: Backpropagation, Neural Networks 1 lecture by Andrej Karpathy. (Link: https://www.youtube.com/watch?v=i94OvYb6noo)
-
+4. Using `micrograd` by Andrej Karpathy and his video on it: https://www.youtube.com/watch?v=VMj-3S1tku0
 
 ## Goal
 
 * The  goal of using derivatives is to guide the model training loop in which directions the parameters of the model need to be updated. 
 
-* We want to optimize the loss function with respect to the parameters using **gradient descent**
+* We want to optimize the loss function with respect to the weights using **gradient descent**
 
 From grokking deep learning:
 
 * "Given a shared error, the network needs to figure out which weights contributed (so they can be adjusted) and which weights did **not** contribute (so they can be left alone. 
 
-* "Hey, if you want this node to be x amount higher, then each of these previous four nodes needs to be `x*weights_1_2` amoutn higher/lower, because these weights were amplifying the prediction by `weights_1_2` times." -p.120
+* "Hey, if you want this node to be x amount higher, then each of these previous four nodes needs to be `x*weights_1_2` amount higher/lower, because these weights were amplifying the prediction by `weights_1_2` times." -p.120
 
 
 
@@ -46,6 +46,30 @@ The code above is really the basis of gradient descent. In a single line of code
 
 `(pred - goal_pred)` 
 
+* **Example** from `micrograd`: How are the values `a` and `b` affecting g? In other words, what is the derivative of g with respect to a and b? 
+
+```
+from micrograd.engine import Value
+
+a = Value(-4.0)
+b = Value(2.0)
+c = a + b
+d = a * b + b**3
+c += c + 1
+c += 1 + c + (-a)
+d += d * 2 + (b + a).relu()
+d += 3 * d + (b - a).relu()
+e = c - d
+f = e**2
+g = f / 2.0
+g += 10.0 / f
+print(f'{g.data:.4f}') # prints 24.7041, the outcome of this forward pass
+g.backward()
+print(f'{a.grad:.4f}') # prints 138.8338, i.e. the numerical value of dg/da
+print(f'{b.grad:.4f}') # prints 645.5773, i.e. the numerical value of dg/db
+```
+
+Happens to be 138, which says, how a affects g through this mathematical expression. If we slightly nudge `a` and make it slightly larger, it means that g will grow with a slope of 138!. How will `g` respond if `a` or `b` get tweaked a small amount in a positive direction, is what this is answering. 
 
 ## Recipe
 
