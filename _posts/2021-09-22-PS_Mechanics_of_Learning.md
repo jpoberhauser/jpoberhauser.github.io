@@ -1,7 +1,7 @@
 # Mechanics of Learning
 
 
-How do neural networks learn? In this post, I consolidate all of the snippets and useful tips that helped me understand neural networks, backpropagation, and other techniques that nn use to learn. The three sources that I used the most are:
+How do neural networks learn? In this post, I consolidate all of the snippets and useful tips that helped me understand neural networks, backpropagation, and other techniques that nn use to learn. The sources that I used the most are:
 
 1. Deep Learning with PyTorch by Eli Stevens, Luca Antiga, Thomas Viehmann (link here https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf)
 2. Grokking Deep Learning by Andrew W. Trask
@@ -69,7 +69,9 @@ print(f'{a.grad:.4f}') # prints 138.8338, i.e. the numerical value of dg/da
 print(f'{b.grad:.4f}') # prints 645.5773, i.e. the numerical value of dg/db
 ```
 
-Happens to be 138, which says, how a affects g through this mathematical expression. If we slightly nudge `a` and make it slightly larger, it means that g will grow with a slope of 138!. How will `g` respond if `a` or `b` get tweaked a small amount in a positive direction, is what this is answering. 
+Happens to be 138, which says, how a affects `g` through this mathematical expression. If we slightly nudge `a` and make it slightly larger, it means that `g` will grow with a slope of 138!. How will `g` respond if `a` or `b` get tweaked a small amount in a positive direction, is what this is answering. 
+
+We use this same machinery for nn training. In real rtaintraininging, we use tensors, not scalars. 
 
 ## Recipe
 
