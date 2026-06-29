@@ -52,13 +52,18 @@ title: Home
   <div class="card-grid">
     <a class="card" href="https://github.com/jpoberhauser/pybaseball">
       <div class="card-title">pybaseball</div>
-      <div class="card-desc">Baseball data analysis and modeling in Python.</div>
+      <div class="card-desc">Fork of pybaseball supercharged with LLMs for easy natural language question answering! Pull current and historical baseball statistics using Python (Statcast, Baseball Reference, FanGraphs).</div>
       <div class="card-link">github.com/jpoberhauser/pybaseball</div>
     </a>
     <a class="card" href="https://github.com/jpoberhauser/multi-object-trackers-collection">
       <div class="card-title">Multi-Object Trackers Collection</div>
-      <div class="card-desc">A reference collection of multi-object tracking implementations.</div>
+      <div class="card-desc">Keeping up with multi-object trackers. A collection, organized by type, of the latest trackers, ReID, and surveys — plus all the building blocks of trackers.</div>
       <div class="card-link">github.com/jpoberhauser/multi-object-trackers-collection</div>
+    </a>
+    <a class="card" href="https://github.com/jpoberhauser/baseballCompanion">
+      <div class="card-title">baseballCompanion</div>
+      <div class="card-desc">Ask natural language questions about the current state of baseball, grounded in recent YouTube analysis videos. Uses Whisper for transcription, SentenceTransformers for embeddings, FAISS as the vector store, and llama.cpp for local LLM inference with RAG (currently Mistral 7B Instruct, swappable backends). No API keys required.</div>
+      <div class="card-link">github.com/jpoberhauser/baseballCompanion</div>
     </a>
   </div>
 </section>
