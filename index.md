@@ -4,11 +4,15 @@ title: Home
 ---
 
 <section class="landing-intro">
-  <h1>Pablo Oberhauser</h1>
+  <h1>Juan Pablo Oberhauser</h1>
   <p class="lede">
-    Data Scientist with 10+ years of experience in computer vision, deep learning, and tabular ML.
-    I build models for continuous behavioral monitoring, design self-paced learning material,
-    and write notes on the papers and tools I use along the way.
+    Computer vision scientist developing behavioral phenotyping systems for laboratory mice in preclinical research,
+    spanning detection, tracking, pose estimation, and behavioral classification.
+  </p>
+  <p class="lede-interests">
+    <strong>Interested in:</strong> self-supervised pretraining, multi-task learning, contrastive learning,
+    masked pretraining, vision-language models, few-shot learning, temporal sequence modeling,
+    knowledge distillation, transformer architectures, active learning.
   </p>
 </section>
 
