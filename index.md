@@ -17,16 +17,15 @@ title: Home
   <ul class="pub-list">
     <li>
       <div class="pub-meta">December 2025 · <em>PNAS</em></div>
-      <div class="pub-title">Multi-week digital home cage monitoring reduces noise and enhances reproducibility</div>
+      <div class="pub-title"><a href="https://www.biorxiv.org/content/10.1101/2025.10.29.685181v1">Multi-week digital home cage monitoring reduces noise and enhances reproducibility</a></div>
     </li>
     <li>
       <div class="pub-meta">June 2025 · <em>CVPR 2025, CV4Animals</em> (poster + oral)</div>
-      <div class="pub-title">Towards Continuous Home Cage Monitoring: An Evaluation of Tracking and Identification Strategies for Laboratory Mice</div>
+      <div class="pub-title"><a href="https://arxiv.org/pdf/2507.07929">Towards Continuous Home Cage Monitoring: An Evaluation of Tracking and Identification Strategies for Laboratory Mice</a></div>
     </li>
     <li>
       <div class="pub-meta">December 2024 · <em>bioRxiv</em></div>
-      <div class="pub-title">An integrated and scalable rodent cage system enabling continuous computer vision-based behavioral analysis and AI-enhanced digital biomarker development</div>
-      <div class="pub-links"><a href="https://doi.org/10.1101/2024.12.18.629281">doi.org/10.1101/2024.12.18.629281</a></div>
+      <div class="pub-title"><a href="https://www.biorxiv.org/content/10.1101/2024.12.18.629281v2">An integrated and scalable rodent cage system enabling continuous computer vision-based behavioral analysis and AI-enhanced digital biomarker development</a></div>
     </li>
   </ul>
 </section>
