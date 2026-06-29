@@ -38,16 +38,20 @@ title: Home
   <h2>Open courses I am creating</h2>
   <p class="section-lede">I built these because I couldn't find ground-up resources on these topics. Each one is a full skeleton with exercise notebooks and worked solutions.</p>
   <div class="card-grid">
-    <a class="card" href="https://github.com/jpoberhauser/vision-transformers-and-ssl">
-      <div class="card-title">Vision Transformers &amp; Self-Supervised Learning</div>
-      <div class="card-desc">Hands-on course covering ViT architectures and modern SSL methods.</div>
-      <div class="card-link">github.com/jpoberhauser/vision-transformers-and-ssl</div>
-    </a>
-    <a class="card" href="https://github.com/jpoberhauser/vision_language_course">
-      <div class="card-title">Vision-Language Course</div>
-      <div class="card-desc">Self-paced material on multimodal vision-language models.</div>
-      <div class="card-link">github.com/jpoberhauser/vision_language_course</div>
-    </a>
+    <div class="card">
+      <a class="card-main" href="https://jpoberhauser.github.io/vision-transformers-and-ssl/">
+        <div class="card-title">Vision Transformers &amp; Self-Supervised Learning</div>
+        <div class="card-desc">Hands-on course covering ViT architectures and modern SSL methods.</div>
+      </a>
+      <a class="card-source" href="https://github.com/jpoberhauser/vision-transformers-and-ssl">View source on GitHub →</a>
+    </div>
+    <div class="card">
+      <a class="card-main" href="https://jpoberhauser.github.io/vision_language_course/">
+        <div class="card-title">Vision-Language Course</div>
+        <div class="card-desc">Self-paced material on multimodal vision-language models.</div>
+      </a>
+      <a class="card-source" href="https://github.com/jpoberhauser/vision_language_course">View source on GitHub →</a>
+    </div>
   </div>
 </section>
 

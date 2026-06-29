@@ -161,6 +161,22 @@
   color: #6a737d;
   font-family: monospace;
 }
+.card-main {
+  display: block;
+  text-decoration: none !important;
+  color: inherit;
+}
+.card-source {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: #6a737d;
+  text-decoration: none;
+}
+.card-source:hover {
+  color: #0969da;
+  text-decoration: underline;
+}
 
 /* Compact post list */
 .post-list-compact {
