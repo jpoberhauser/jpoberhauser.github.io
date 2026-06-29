@@ -28,6 +28,10 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
 
+header_pages:
+  - blog.md
+  - about.md
+
 titles_from_headings:
   enabled:     true
   strip_title: true

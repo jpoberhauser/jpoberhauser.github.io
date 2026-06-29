@@ -60,3 +60,110 @@
 
 .codecell table { width: auto; }
 
+/* Landing page */
+.landing-intro {
+  margin: 1rem 0 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaecef;
+}
+.landing-intro h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+.landing-intro .lede {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 42rem;
+  line-height: 1.55;
+}
+
+.landing-section {
+  margin: 2.5rem 0;
+}
+.landing-section > h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.35rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Publications */
+.pub-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.pub-list > li {
+  margin-bottom: 1.1rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid #d0d7de;
+}
+.pub-list .pub-meta {
+  font-size: 0.85rem;
+  color: #6a737d;
+  margin-bottom: 0.2rem;
+}
+.pub-list .pub-title {
+  font-weight: 500;
+  line-height: 1.4;
+}
+.pub-list .pub-links {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Card grid (courses + projects) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.card:hover {
+  border-color: #0969da;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transform: translateY(-1px);
+}
+.card-title {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.card-desc {
+  font-size: 0.92rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.card-link {
+  font-size: 0.8rem;
+  color: #6a737d;
+  font-family: monospace;
+}
+
+/* Compact post list */
+.post-list-compact {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.post-list-compact > li {
+  padding: 0.35rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.post-list-compact .post-date {
+  font-size: 0.8rem;
+  color: #6a737d;
+  font-variant-numeric: tabular-nums;
+  min-width: 6.5rem;
+}
+
