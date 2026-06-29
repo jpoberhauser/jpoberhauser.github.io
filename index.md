@@ -31,7 +31,8 @@ title: Home
 </section>
 
 <section class="landing-section">
-  <h2>Self-paced courses</h2>
+  <h2>Open courses I am creating</h2>
+  <p class="section-lede">I built these because I couldn't find ground-up resources on these topics. Each one is a full skeleton with exercise notebooks and worked solutions.</p>
   <div class="card-grid">
     <a class="card" href="https://github.com/jpoberhauser/vision-transformers-and-ssl">
       <div class="card-title">Vision Transformers &amp; Self-Supervised Learning</div>
