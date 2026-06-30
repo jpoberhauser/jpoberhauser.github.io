@@ -14,6 +14,9 @@ title: Home
     masked pretraining, vision-language models, few-shot learning, temporal sequence modeling,
     knowledge distillation, transformer architectures, active learning.
   </p>
+  <p class="landing-links">
+    <a href="https://github.com/jpoberhauser">GitHub →</a>
+  </p>
 </section>
 
 <section class="landing-section">
