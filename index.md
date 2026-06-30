@@ -76,6 +76,16 @@ title: Home
       <div class="card-desc">Ask natural language questions about the current state of baseball, grounded in recent YouTube analysis videos. Uses Whisper for transcription, SentenceTransformers for embeddings, FAISS as the vector store, and llama.cpp for local LLM inference with RAG (currently Mistral 7B Instruct, swappable backends). No API keys required.</div>
       <div class="card-link">github.com/jpoberhauser/baseballCompanion</div>
     </a>
+    <div class="card">
+      <a class="card-main" href="https://jpoberhauser.github.io/vision_language_course/module2_vision_language_foundations/008_Molmo_understand_and_finetune.html">
+        <div class="card-title">Fine-tuning VLMs for vision tasks</div>
+        <div class="card-desc">Walkthroughs of fine-tuning vision-language models (Molmo, Molmo2 with QLoRA, LLaVA) for vision tasks, with training scripts small enough to run on a single GPU.</div>
+      </a>
+      <div class="card-extra">
+        <a href="https://jpoberhauser.github.io/vision_language_course/module2_vision_language_foundations/009_Molmo2_finetune_qlora.html">Molmo2 + QLoRA</a>
+        <a href="https://jpoberhauser.github.io/vision_language_course/module2_vision_language_foundations/llava_understand_and_finetune.html">LLaVA</a>
+      </div>
+    </div>
   </div>
 </section>
 

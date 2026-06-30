@@ -185,6 +185,24 @@
   color: #0969da;
   text-decoration: underline;
 }
+.card-extra {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+}
+.card-extra a {
+  display: inline-block;
+  margin-right: 0.9rem;
+  color: #6a737d;
+  text-decoration: none;
+}
+.card-extra a:hover {
+  color: #0969da;
+  text-decoration: underline;
+}
+.card-extra a::before {
+  content: "↗ ";
+  color: #adb5bd;
+}
 
 /* Compact post list */
 .post-list-compact {
